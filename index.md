@@ -8,14 +8,8 @@ author_profile: true
 
 Hy there 👋!!!
 
->My name is Marius 🤝. Welcome to my website. But first you can read my short [bio](./about.md).
+>My name is Marius 🤝. Welcome to my website. But first you can read my short [bio](./about).
 
-## Experience
+>You can also get to know me by my [digital cv](./cv) and my [skills](./skills).
 
-- 2.
-- 2.
-- 2.
-
----
-
-## Education
+>Finally I share with you some of my [projects](./projects) and [blog](./blog).
