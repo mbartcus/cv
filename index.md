@@ -11,8 +11,11 @@ Hy there 👋!!!
 >My name is Marius 🤝. Welcome to my website. But first you can read my short [bio](./about.md).
 
 ## Experience
-1.
-2.
+
+- 2.
+- 2.
+- 2.
+
 ---
 
 ## Education
