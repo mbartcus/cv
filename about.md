@@ -2,10 +2,11 @@
 # Feel free to add content and custom Front Matter to this file.
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
-layout: page
+layout: default
 title: About me
 permalink: /about/
 ---
+# Short bio
 
 My name is Marius 🤝. Here, you will get to know me better ✊.
 
