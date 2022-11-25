@@ -7,4 +7,4 @@ layout: default
 
 Hy there 👋!!!
 
-My name is Marius 🤝. Welcome to my website. But first you can see me short bio [About me](./about.md).
+My name is Marius 🤝. Welcome to my website. But first you can read my short [bio](./about.md).
