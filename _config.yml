@@ -24,7 +24,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   Hy there. This is my digital cv. You can find a more detailed information about me.
 domain: mbartcus.github.io       # if you want to force HTTPS, specify the domain without the http at the start, e.g. example.com
 url: https://mbartcus.github.io  # the base hostname and protocol for your site, e.g. http://example.com
-baseurl: /cv/      # place folder name if the site is served in a subfolder
+baseurl: /me/      # place folder name if the site is served in a subfolder
 github_username:  mbartcus
 
 # Build settings
