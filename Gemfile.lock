@@ -266,7 +266,6 @@ PLATFORMS
 DEPENDENCIES
   github-pages (~> 227)
   http_parser.rb (~> 0.6.0)
-  jekyll (~> 3.9.2)
   minima (~> 2.5)
   minimal-mistakes-jekyll
   tzinfo (>= 1, < 3)
