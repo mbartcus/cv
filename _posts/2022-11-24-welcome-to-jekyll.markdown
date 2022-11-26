@@ -1,18 +1,22 @@
 ---
-layout: post
-title:  "Welcome to Jekyll!"
+layout: single
+title:  "My first blog"
 date:   2022-11-24 15:38:07 +0100
 categories: jekyll update
 permalink: "/:categories:title"
+toc: true
+toc_label: "My Table of Contents"
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
+# Hello
+You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+## Hello 1
 Jekyll requires blog post files to be named according to the following format:
 
 `YEAR-MONTH-DAY-title.MARKUP`
-
+## Hello 2
 Where `YEAR` is a four-digit number, `MONTH` and `DAY` are both two-digit numbers, and `MARKUP` is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.
-
+# Hello
 Jekyll also offers powerful support for code snippets:
 
 {% highlight ruby %}

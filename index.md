@@ -4,12 +4,15 @@
 
 layout: single
 author_profile: true
+
+#header:
+#  image: /assets/img/beautiful-tree.jpg
+#  overlay_filter: linear-gradient(rgba(255, 0, 0, 0.5), rgba(0, 255, 255, 0.5))
 ---
 
 Hy there 👋!!!
 
->My name is Marius 🤝. Welcome to my website. But first you can read my short [bio](./about).
+>My name is Marius 🤝. Welcome to my website.
+Here, you can check my [digital cv](./cv).
 
->You can also get to know me by my [digital cv](./cv) and my [skills](./skills).
-
->Finally I share with you some of my [projects](./projects) and [blog](./blog).
+>Also, you can find my [projects](./projects) and [blog](./blog) here.
