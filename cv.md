@@ -16,7 +16,7 @@ My professional interests are in ***artificial intelligence*** 🧠 : ***machine
 
 My hobbies are: sport (running 🏃️, foot, chess), travel🧳, movies/series.
 
-In the weekend I am the happiest men spending time with my family - my wife and our boy 👨‍👩‍👦.
+In the weekend I am the happiest men spending time with my family - my wife and our boys 👨‍👩‍👦 .
 
 Looking forward 👀 to get in touch with you and working on some interesting projects.
 
