@@ -16,7 +16,9 @@ My professional interests are in ***artificial intelligence*** 🧠 : ***machine
 
 My hobbies are: sport (running 🏃️, foot, chess), travel🧳, movies/series.
 
-In the weekend I am the happiest men spending time with my family - my wife and our boys 👨‍👩‍👦 .
+In the weekend I am the happiest men spending time with my family - my wife and our boys 👨‍👩‍👦‍👦.
+
+You can get my short [CV](assets/docs/CV_Bartcus.pdf) in a pdf format or you can consult it more detailed in a digital form on this page.
 
 Looking forward 👀 to get in touch with you and working on some interesting projects.
 
