@@ -2,13 +2,13 @@
 layout: single
 title:  "Learn how to blog using Jupyter notebooks"
 date:   2022-11-24 15:38:07 +0100
-categories: functional programming, python, loop, map(), filter(), reduce()
+categories: jupyter blog
 permalink: "/:categories:title"
 toc: true
 toc_label: "My Table of Contents"
 toc_sticky: true
 ---
-
+Hello
 
 ```python
 from IPython.core.display import Image
@@ -18,9 +18,9 @@ Image('https://www.python.org/static/community_logos/python-logo-master-v3-TM-fl
 
 
 
-    
+
 ![png](output_1_0.png)
-    
+
 
 
 
@@ -54,7 +54,7 @@ The `jupyter` command above will launch the JupyterLab editor, allowing us to ad
 
 The first cell of your Jupter notebook will contain your post metadata ([front matter](https://sourcethemes.com/academic/docs/front-matter/)).
 
-In Jupter, choose _Markdown_ as the type of the first cell and wrap your Academic metadata in three dashes, indicating that it is YAML front matter: 
+In Jupter, choose _Markdown_ as the type of the first cell and wrap your Academic metadata in three dashes, indicating that it is YAML front matter:
 
 ```
 ---
