@@ -1,17 +1,12 @@
 ---
-authors:
-- admin
-categories: []
-date: "2019-02-05T00:00:00Z"
-image:
-  caption: ""
-  focal_point: ""
-lastMod: "2019-09-05T00:00:00Z"
-projects: []
-subtitle: Learn how to blog in Academic using Jupyter notebooks
-summary: Learn how to blog in Academic using Jupyter notebooks
-tags: []
-title: Display Jupyter Notebooks with Academic
+layout: single
+title:  "Learn how to blog using Jupyter notebooks"
+date:   2022-11-24 15:38:07 +0100
+categories: functional programming, python, loop, map(), filter(), reduce()
+permalink: "/:categories:title"
+toc: true
+toc_label: "My Table of Contents"
+toc_sticky: true
 ---
 
 ```python
