@@ -19,17 +19,17 @@ Image('https://www.python.org/static/community_logos/python-logo-master-v3-TM-fl
 
 
     
-![png](./index_1_0.png)
+![png](./2022-11-24-writing_jupyter_blog_1_0.png)
     
 
 
 
 
 ```python
-print("Welcome to Academic!")
+print("Welcome! This is a post created with Jupyter")
 ```
 
-    Welcome to Academic!
+    Welcome! This is a post created with Jupyter
 
 
 ## Install Python and JupyterLab
