@@ -19,7 +19,7 @@ Image('https://www.python.org/static/community_logos/python-logo-master-v3-TM-fl
 
 
     
-![png](./2022-11-24-writing_jupyter_blog_1_0.png)
+![png](output_1_0.png)
     
 
 
