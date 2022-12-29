@@ -1,35 +1,18 @@
 ---
-authors:
-- admin
-categories:
-- functional programming
-- python
-- loop
-- map()
-- filter()
-- reduce()
-date: "2022-11-13T00:00:00Z"
-draft: false
-featured: false
-lastmod: "2022-11-14T00:00:00Z"
-projects: []
-subtitle: "Replacing loop and optimizing code in python"
-summary: "Replace the loops using some of the functional programming techniques"
-tags:
-- functional programming
-- python
-- loop
-- map()
-- filter()
-- reduce()
-- article
-- python
-title: Replacement loops with best practices
+layout: single
+title:  "Replacing loop with best practices"
+date:   2022-11-24 15:38:07 +0100
+categories: functional programming, python, loop, map(), filter(), reduce()
+permalink: "/:categories:title"
+toc: true
+toc_label: "My Table of Contents"
+toc_sticky: true
 ---
+
 
 Loops are very expensive (slow) in python, there is why we must avoid them as possible. Instead of them let us think in programming in a functional way. That is very simple. Like functions are some code that can be called in order to return a value or values, the functional programming computation to combine functions that takes arguments and return a concrete value or values as a result.
 
-Programs developed in functional style have fundamental benefits 
+Programs developed in functional style have fundamental benefits
  - easier to develop (code every function in isolation)
  - debug and test (debug and test individual functions without looking to the rest of the program)
  - understand (you do not need to deal with the changes throughout the entire program)
@@ -56,7 +39,7 @@ Using lambda function is a very good  alternative to functions in practice.
 
 Here I return to the idea why I started writing this article. The loops are very slow and we use them every time we need to process data. When our data becomes big and the program becomes slow, we start thinking how can we optimize it. The first think to do is to transform every loop in using one of the 3 techniques: map, filter or reduce. Theese are writen in C programming language, that is why it will be gain in efficience and will use less memory.  Let me introduce them, so that we can find easly how to transform the loops using one of the techniques.
 
-## The map() function 
+## The map() function
 
 Let us understand how map function is used. The map() function iterates over the items of an iterate input and returns an result after applying some function to every item in the data. Let us see how the function works in action, but first the syntax:
 
@@ -73,7 +56,7 @@ Observe the fist think to pass to the map function is a **function object**. Thi
 
 ### Exemple of using map function:
 
-Suppose we want to compute the previous **sq**() function for a list of data. 
+Suppose we want to compute the previous **sq**() function for a list of data.
 ```python
 data = [1, 2, 3, 4, 5]
 ```
@@ -253,5 +236,3 @@ even_numbers
 <generator object <genexpr> at 0x7f586ade04a0>
 list(even_numbers)
 ```
-
-
