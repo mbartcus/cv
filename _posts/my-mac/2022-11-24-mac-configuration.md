@@ -9,7 +9,8 @@ toc_label: "My Table of Contents"
 toc_sticky: true
 ---
 
-Each time I reinstall my mac os system from scratch I need to pass throw the same installation steps. It is difficult to remember them all so I let it go, and install them later as I need a specific tool installed. To make it more simple and install everything I need, all at once, I prepared this short article.
+Each time I reinstall my mac os system I have to do the same installation steps.
+It is difficult to remember the necessary tools and the steps to install them, there is why up till now I install them in time the specific tool is needed. However, I noticed that it is better to configure the computer from start and have all the applications installed. There is why I make it more simple by writing this article, explaining what I install, and how I configure my Mac M1 for developing on machine learning and doing data science.
 
 Also, you can find it helpful because of the list of the best founded apps and their configuration can be found in this article. Of course this article will be changed during time, as my experience using the mac os applications.
 
