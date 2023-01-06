@@ -81,20 +81,19 @@ This thesis focuses on statistical learning and multi-dimensional data analysis.
 # Education
 ![image-center](/assets/img/learn.webp){: .align-center}
 
-***
+## Ph.D. in Computer Science
 
   ![image-left](/assets/icons/graduation-cap.png){: .align-left}
   2012 - 2015 Bac+8\
-  Ph.D. in Computer Science: Bayesian non-parametric parsimonious mixtures for model-based clustering\
+  Bayesian non-parametric parsimonious mixtures for model-based clustering\
   University of Toulon France
 
   You can download the pdf [here](/assets/docs/These_Bartcus.pdf)
 
-***
+## Master 2 in Data Exploration and decision-making
 
   ![image-left](/assets/icons/graduation-cap.png){: .align-left}
   2012 Bac+5\
-  Master 2 in Data Exploration and decision-making\
   University Paris 13
 
   **Most important Skills:**
@@ -106,21 +105,18 @@ This thesis focuses on statistical learning and multi-dimensional data analysis.
 
   [Here](http://odf.univ-paris13.fr/_contents/ametys%253Aodf/ametys%253Acontents/program-gi4ei2d-116-2-2/_metadata/attachments/1/attachment/master_GALILEE_EID2-1%2520valide.pdf?objectId=programContent%3A%2F%2F47cc4dc3-bd27-4a44-be5c-a370f4259200&download=true) is the link to the full path.
 
-***
+## License Engineer IT
 
   ![image-left](/assets/icons/graduation-cap.png){: .align-left}
   2010 Bac+4\
-  License Engineer IT\
   Technical University of Moldova
 
-***
+## Bac in Engineering
 
   ![image-left](/assets/icons/graduation-cap.png){: .align-left}
   2006 Bac\
-  Bac in Engineering\
   Technical University of Moldova
 
-***
 
 # Languages
 ![image-left](/assets/img/languages.png){: .align-left}
