@@ -44,6 +44,7 @@ September 2020 – February 2022
 ***Description:***
 Automatic segmentation of 3D lung nodules through deep learning. Lung cancer is one of the leading causes of cancer death worldwide. Characterization of lung tumors should be done by machine learning using radiomics techniques. Therefore we need to automatically segment the lung nodules in CT images. To segment lung tumors, we use deep learning which gives good results in terms of quality, robustness and computation time.
 {: .text-justify}
+<a href="/portfolio/clb/" class="btn btn--success">Project</a>
 
 ## Research Engineer in Data science at University of Caen, Caen France
 ![image-left](/assets/icons/logo-unicaen.png){: .align-left height=1px}
