@@ -278,6 +278,12 @@ compress_html:
   ignore:
     envs: development
 
+#These settings essentially say output index.html files for each portfolio document in _portfolio
+#at _site/portfolio/<document-filename>/.
+collections:
+  portfolio:
+    output: true
+    permalink: /:collection/:path/
 
 # Defaults
 defaults:
@@ -292,3 +298,12 @@ defaults:
       comments: # true
       share: true
       related: true
+
+  # _portfolio
+  - scope:
+      path: ""
+      type: portfolio
+    values:
+      layout: single
+      author_profile: false
+      share: true
