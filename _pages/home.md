@@ -5,12 +5,14 @@
 layout: single
 author_profile: true
 permalink: /
+classes: wide
 
 #header:
-#  image: /assets/img/beautiful-tree.jpg
+#  image: /assets/img/welcome.jpg
 #  overlay_filter: linear-gradient(rgba(255, 0, 0, 0.5), rgba(0, 255, 255, 0.5))
 ---
 
+![image-left](/assets/img/welcome.jpg){: .align-left}
 Hy there 👋!!!
 
 >My name is Marius 🤝. Welcome to my website.
