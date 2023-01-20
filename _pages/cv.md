@@ -31,7 +31,11 @@ I am looking forward 👀 to getting in touch with you and working on some great
 {: .text-left}
 
 # Main Skills as a Data Scientist
-
+- Process structured or unstructured data
+- Control data quality, detect patterns, outliers
+- Propose and put into practice statistical models (regressions, etc.) or data science (machine learning, etc.) to meet business challenges
+- Collaborate with technical and business teams to define needs and explain results
+- Present the results (reports, presentations, etc.)
 - Develop and industrialize data science algorithms (machine learning, NLP, etc.)
 
 # Technical skills
@@ -46,7 +50,7 @@ I am looking forward 👀 to getting in touch with you and working on some great
 
 - ***Time management***: I like to manage my time and use it as optimally as possible. A google calendar is a great tool to organize and manage your time.
 
-- ***Motivation to learn***: I consider myself very motivated to learn and to gather new skills each day. This skill helped me a lot in passing throw my Ph.D. and then working on different machine-learning projects as a PostDoc.
+- ***Motivation to learn***: I consider myself very motivated to learn and to gather new skills each day. This skill helped me a lot in passing throw my Ph.D. and then working on different machine-learning projects as a PostDoc. I  stay up to date with state of the art of machine learning technology.
 
 - ***Analytical mind***: I developed this skill as a Ph.D. in Computer Science during all of my previous experiences.
 
