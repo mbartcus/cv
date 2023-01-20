@@ -19,3 +19,8 @@ Hy there 👋!!!
 Here, you can check my [digital cv](./cv).
 
 >Also, you can find my [projects](./portfolio) and [blog](./blog) here.
+
+Here are most of my favorite citations:
+
+>“It’s easy to lie with statistics It’s hard to tell the truth without statistics.”
+— Andrejs Dunkels
