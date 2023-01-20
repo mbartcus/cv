@@ -143,6 +143,32 @@ This thesis focuses on statistical learning and multi-dimensional data analysis.
   Technical University of Moldova
 
 
+# Publications
+
+## Publications International Conferences
+[1] Marius Bartcus, Faicel Chamroukhi, and Hervé Glotin. Hierarchical Dirichlet Process Hid- den Markov Model for Unsupervised Bioacoustic Analysis. In Proceedings of the IEEE International Joint Conference on Neural Networks (IJCNN), Killarney, Ireland, July 2015
+[2] Marius Bartcus and Faicel Chamroukhi. Hierarchical Dirichlet Process Hidden Markov Model for unsupervised learning from bioacoustic data. In Proceedings of the Internatio- nal Conference on Machine Learning (ICML) workshop on unsupervised learning from big bioacoustic data (uLearnBio), Beijing, China, June 2014
+[3] Marius Bartcus, Faicel Chamroukhi, Joseph Razik, and Hervé Glotin. Unsupervised whale song decomposition with Bayesian non-parametric Gaussian mixture. In Proceedings of the Neural Information Processing Systems (NIPS), workshop on Neural Information Processing Scaled for Bioacoustics : NIPS4B, pages 205–211, Nevada, USA, December 2013
+[4] Faicel Chamroukhi, Marius Bartcus, and Hervé Glotin. Bayesian Non-Parametric Parsimo- nious Clustering. In Proceedings of 22nd European Symposium on Artifcial Neural Networks, Computational Intelligence and Machine Learning (ESANN), Bruges, Belgium, April 2014
+[5] Faicel Chamroukhi, Marius Bartcus, and Hervé Glotin. Bayesian Non-Parametric Parsimo- nious Gaussian Mixture for Clustering. In Proceedings of 22nd International Conference on Pattern Recognition (ICPR), Stockholm, Sweden, August 2014
+
+## Francophone conferences
+[1] [Marius Bartcus, Marc Boullé, and Fabrice Clérot. A two level co-clustering algorithm for very large data sets. In 18ème Journées Francophones Extraction et Gestion des Connaissances, EGC, 2018](docs/Orange_A_two_level-coclustering.pdf)
+[2] Marius Bartcus, Faicel Chamroukhi, and Hervé Glotin. Clustering Bayésien Parcimonieux Non-Paramétrique. In Proceedings of 14èmes Journées Francophones Extraction et Gestion des Connaissances (EGC), Atelier CluCo : Clustering et Co-clustering, pages 3–13, Rennes, France, Janvier 2014
+
+## International Jurnals (In preparation)
+[1] [Vincent Roger, Marius Bartcus, Faicel Chamroukhi, Hervé Glotin. Unsupervised Bioacoustic Segmen- tation by Hierarchical Dirichlet Process Hidden Markov Model. Multimedia Tools and Applications for Environmental & Biodiversity Informatics, 2018. hal-01879385](https://hal.science/hal-01879385/document)
+[2] [Faicel Chamroukhi, Marius Bartcus, and Hervé Glotin. Dirichlet Process Parsimonious Mixture for clustering, January 2015. Preprint, 35 pages, available online arXiv :501.03347](https://arxiv.org/pdf/1501.03347.pdf)
+[3] Marius Bartcus, Vincent Roger, Faicel Chamroukhi, and Hervé Glotin. Unsupervised learning of acoustic sequences in non-human animals with HDP-HMM applied to whales and birds songs vocalization, 2015. To be submitted to PLOS BIOLOGY journal
+
+## Invited and contributed seminars
+[1] Bartcus Marius. Dirichlet Process Parsimonious Mixture. Seminaire IFSTTAR - COSYS - GRETTIA Equipe Diagnostic et Maintenance, 2015
+[2] Bartcus Marius. Clustering Bayésien Parcimonieux Non-Paramétrique. Journées des docto- rants, Seminaire LSIS Laboratory, 2014
+
+## Thesis
+[1] Marius Bartcus. Bayesian non-parametric parsimonious mixtures for model-based clustering. PhD thesis, University of Toulon, 28 octobre 2015
+[2] Bartcus Marius. Nonnegative Matrix Factorization for Unsupervised Learning. Master’s thesis, LIPN UMR CNRS 7030, Université Paris 13, Villetaneuse, France, September 2012
+
 # Languages
 ![image-left](/assets/img/languages.png){: .align-left}
  French\
