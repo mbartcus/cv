@@ -141,7 +141,7 @@ footer:
       url: "mailto:marius.bartcus@gmail.com"
     - label: "mbartcus.me/"
       icon: "fas fa-fw fa-link"
-      url: "http://mbartcus.me/me/"
+      url: "http://mbartcus.me/"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
       # url: "https://twitter.com/"
