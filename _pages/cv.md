@@ -154,7 +154,7 @@ This thesis focuses on statistical learning and multi-dimensional data analysis.
 
 ## Francophone conferences
 1) [Marius Bartcus, Marc Boullé, and Fabrice Clérot. A two level co-clustering algorithm for very large data sets. In 18ème Journées Francophones Extraction et Gestion des Connaissances, EGC, 2018](/assets/docs/papers/cluclo/Orange_A_two_level-coclustering.pdf)
-2) [Marius Bartcus, Faicel Chamroukhi, and Hervé Glotin. Clustering Bayésien Parcimonieux Non-Paramétrique. In Proceedings of 14èmes Journées Francophones Extraction et Gestion des Connaissances (EGC), Atelier CluCo : Clustering et Co-clustering, pages 3–13, Rennes, France, Janvier 2014](/assets/docs/papers/egc/IPGMM-EGC-CluCo-2014). The presentation is available [here](/assets/docs/papers/egc/IPGMM-EGC-CluCo-presentation)
+2) [Marius Bartcus, Faicel Chamroukhi, and Hervé Glotin. Clustering Bayésien Parcimonieux Non-Paramétrique. In Proceedings of 14èmes Journées Francophones Extraction et Gestion des Connaissances (EGC), Atelier CluCo : Clustering et Co-clustering, pages 3–13, Rennes, France, Janvier 2014](/assets/docs/papers/egc/IPGMM-EGC-CluCo-2014.pdf). The presentation is available [here](/assets/docs/papers/egc/IPGMM-EGC-CluCo-presentation.pdf)
 
 ## International Jurnals (In preparation)
 1) [Vincent Roger, Marius Bartcus, Faicel Chamroukhi, Hervé Glotin. Unsupervised Bioacoustic Segmen- tation by Hierarchical Dirichlet Process Hidden Markov Model. Multimedia Tools and Applications for Environmental & Biodiversity Informatics, 2018. hal-01879385](https://hal.science/hal-01879385/document)
