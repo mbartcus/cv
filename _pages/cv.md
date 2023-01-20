@@ -30,8 +30,15 @@ You can get my short [CV](/assets/docs/CV_Bartcus.pdf) in a pdf format, or you c
 I am looking forward 👀 to getting in touch with you and working on some great projects.
 {: .text-left}
 
-# Technical skills
+# Main Skills as a Data Scientist
 
+- Develop and industrialize data science algorithms (machine learning, NLP, etc.)
+
+# Technical skills
+- Programming Languages. As a software engineer background, many programming languages are studied by me. These are the 3 main languages used in my work as a Data Scientist:
+  - Python (is the main programming language I use all the day)
+  - Matlab (used during my Ph.D. and Master 2)
+  - R (contributed to the developing of an open source R package that is available on [GitHub link](https://github.com/fchamroukhi/MEteorits) )
 
 # Soft Skills
 
