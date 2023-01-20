@@ -20,9 +20,9 @@ title                    : "BARTCUS Marius"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "BARTCUS Marius"
-description              : " Welcome to my site 👋
-  Currently I'm a student at OpenClassroom as an Engineer in Artificial Intelligence.
-  I have a software engineer background and a Phd in computer science."
+description              : " Welcome to my site 👋 I’m a student at
+OpenClassroom as an Engineer in Artificial Intelligence.
+I have a software engineer background and a Ph.D. in computer science."
 url                      : https://mbartcus.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : mbartcus/me # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
