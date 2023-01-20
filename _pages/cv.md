@@ -36,6 +36,7 @@ I am looking forward 👀 to getting in touch with you and working on some great
 - Propose and put into practice statistical models (regressions, etc.) or data science (machine learning, etc.) to meet business challenges
 - Collaborate with technical and business teams to define needs and explain results
 - Present the results (reports, presentations, etc.)
+- Implement and develop algorithms and tools in Python or R, relying on associated statistical and data science libraries
 - Develop and industrialize data science algorithms (machine learning, NLP, etc.)
 
 # Technical skills
@@ -150,6 +151,7 @@ This thesis focuses on statistical learning and multi-dimensional data analysis.
 # Publications
 
 ## Publications International Conferences
+
 1) [Marius Bartcus, Faicel Chamroukhi, and Hervé Glotin. Hierarchical Dirichlet Process Hid- den Markov Model for Unsupervised Bioacoustic Analysis. In Proceedings of the IEEE International Joint Conference on Neural Networks (IJCNN), Killarney, Ireland, July 2015](/assets/docs/papers/ijcnn/IJCNN2015.pdf)
 
 2) Marius Bartcus and Faicel Chamroukhi. Hierarchical Dirichlet Process Hidden Markov Model for unsupervised learning from bioacoustic data. In Proceedings of the International Conference on Machine Learning (ICML) workshop on unsupervised learning from big bioacoustic data (uLearnBio), Beijing, China, June 2014
@@ -175,11 +177,15 @@ This thesis focuses on statistical learning and multi-dimensional data analysis.
 3) Marius Bartcus, Vincent Roger, Faicel Chamroukhi, and Hervé Glotin. Unsupervised learning of acoustic sequences in non-human animals with HDP-HMM applied to whales and birds songs vocalization, 2015. To be submitted to PLOS BIOLOGY journal
 
 ## Invited and contributed seminars
+
 1) Bartcus Marius. Dirichlet Process Parsimonious Mixture. Seminaire IFSTTAR - COSYS - GRETTIA Equipe Diagnostic et Maintenance, 2015
+
 2) Bartcus Marius. Clustering Bayésien Parcimonieux Non-Paramétrique. Journées des docto- rants, Seminaire LSIS Laboratory, 2014
 
 ## Thesis
+
 1) Marius Bartcus. Bayesian non-parametric parsimonious mixtures for model-based clustering. PhD thesis, University of Toulon, 28 octobre 2015
+
 2) Bartcus Marius. Nonnegative Matrix Factorization for Unsupervised Learning. Master’s thesis, LIPN UMR CNRS 7030, Université Paris 13, Villetaneuse, France, September 2012
 
 # Languages
