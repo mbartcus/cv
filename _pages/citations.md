@@ -4,17 +4,13 @@
 
 layout: single
 author_profile: true
-title: My digital CV
 permalink: /citations/
-toc: true
-toc_label: BARTCUS Marius
-toc_sticky: true
+classes: wide
 ---
 
 On this page, I will share with you the quotes that can inspire your data scientist journey. As I see a new quote that seems interesting, I will update this page.
 
->“Data science is an interdisciplinary field that involves using various methods and techniques from computer science, statistics, and domain expertise to extract insights and knowledge from data. It includes activities such as data collection, cleaning, exploration, modeling, and visualization. The goal of data science is to turn raw data into actionable insights that can inform decision making and improve business outcomes.”
-- Chat GBT
+>“Data science is an interdisciplinary field that involves using various methods and techniques from computer science, statistics, and domain expertise to extract insights and knowledge from data. It includes activities such as data collection, cleaning, exploration, modeling, and visualization. The goal of data science is to turn raw data into actionable insights that can inform decision making and improve business outcomes.” - Chat GBT
 
 >“If you can’t explain it simply, you don’t understand it well enough.”
 — Albert Einstein
