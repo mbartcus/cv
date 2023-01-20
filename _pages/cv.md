@@ -30,6 +30,23 @@ You can get my short [CV](/assets/docs/CV_Bartcus.pdf) in a pdf format, or you c
 I am looking forward 👀 to getting in touch with you and working on some great projects.
 {: .text-left}
 
+# Technical skills
+
+
+# Soft Skills
+
+- ***Result Oriented***: I am putting my goals every week so that I archive them. I can use different tools like MindNote, TodoList, Notion to organize my tasks and work. Each experience shows that I archived my goals on time, and never gave back.
+
+- ***Time management***: I like to manage my time and use it as optimally as possible. A google calendar is a great tool to organize and manage your time.
+
+- ***Motivation to learn***: I consider myself very motivated to learn and to gather new skills each day. This skill helped me a lot in passing throw my Ph.D. and then working on different machine-learning projects as a PostDoc.
+
+- ***Analytical mind***: I developed this skill as a Ph.D. in Computer Science during all of my previous experiences.
+
+- ***Conversation***: I like interacting with the team and clients we work with.
+
+- ***Empathy***: I like to listen, understand and share the feelings of others.
+
 # Currently occupation
 ![image-left](/assets/icons/path_oc.png){: .align-left}
 
