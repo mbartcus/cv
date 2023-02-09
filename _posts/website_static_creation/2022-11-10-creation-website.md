@@ -11,13 +11,14 @@ toc_sticky: true
 
 ## Introduction
 
-Depending on what the website is meant for, today, creating a website is relatively easy. My primary goal to create this website was to share more detailed information about myself—a digital cv. Looking forward, I understood that sharing a portfolio with some of my projects, and creating a blog may be interesting for some visitors.
+Depending on what the website is meant for, today, building a website is relatively easy. My primary goal in creating this website was to share more detailed information about myself—a digital CV. Looking forward, I realized that sharing a portfolio with some of my projects, and creating a blog may be captivating for some visitors.
 
-Although I know web development, I'm not an experimented web designer, I was looking for a simple way to create my website. There exist different tools and programming languages that we can use for this task. However, the tools that help us in creating the website are limited in their designs. Creating the website from scratch was captivating, however, I think, using CSS and javascript for building nice web-designed templates needs a lot of patience and time resources.
 
-Looking on the web, I realized that creating a **static website** with [Hugo](https://gohugo.io) or [Jekyll](https://jekyllrb.com) was ideal for me because there are a lot of blog and portfolio templates. Also, using one of these gives the possibility of creating content just using the Markdown. Hugo and Jekyll that are also compatible with GitHub pages are very similar. However, the best template I found that was compatible with what I wanted to create was the [Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/) theme available with Jekyll.
+Although I know web development, I'm not an experienced web designer, so I was looking for a simple way to build my website. To accomplish this task, we can use a variety of tools and programming languages. However, the tools that help us design a website are limited in their design. I enjoyed creating the website from scratch, but I believe that using CSS and Javascript to design good-looking web templates takes a lot of patience and time.
 
-Sometimes it's hard to find ourselves and organize the creation of such a website, therefore I write this blog to describe step by step – how to create and publish a portfolio website.
+Looking on the web, I realized that creating a static website with [Hugo](https://gohugo.io) or [Jekyll](https://jekyllrb.com) was ideal for me because there are a lot of blog and portfolio templates. Using one of these will also allow you to write content using just Markdown. Both Hugo and Jekyll are compatible with GitHub pages. However, the most suitable template I found that was compatible with what I wanted to create was the [Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/) theme available with Jekyll.
+
+It can be difficult to find ourselves and organize the creation of such a website, so I decided to write this blog to explain step-by-step how to create and publish a portfolio site.
 
 1) First, we require a GitHub account. If you do not have one I strongly recommend you create an account. You will then create a repository there to save all your website code.
 2) Next, you need the [Netlify](https://www.netlify.comaccount) to deploy your site. This can be easily connected to the GitHub account so that when you make a change on your site and push it to GitHub, it will automatically update on Netlify.
@@ -25,7 +26,7 @@ Sometimes it's hard to find ourselves and organize the creation of such a websit
 
 ## Jekyll's installation and preparation
 
-To install Jekyll, first, we make sure of all prerequisites. If not, we need to install them. For that run in the terminal, the following commands.
+We need to make sure all prerequisites are met before installing Jekyll. If not, we need to install them. For running in the terminal, run the commands.
 ```shell
 ruby -v
 gem -v
@@ -59,11 +60,11 @@ Now we are ready to create our new website.
 
 ## Creating the website on local machine
 
-Creating the website is more than simple, just write in the terminal:
+Creating a website is more than simple. Just write in the terminal:
 ```shell
 jekyll new my-website
 ```
-This creates a folder in your directory ```my-website```that contains all the website.
+This creates a folder in your directory ```my-website```that contains all the websites.
 
 To view our website, go to my-website folder and run in terminal
 ```shell
@@ -71,9 +72,9 @@ bundle exec jekyll serve
 # => Now browse to http://localhost:4000
 ```
 
-Here we will add content to our site, but first, let us find a template (web theme) that will make our site look nice. You can easily find themes on the internet. I use the Minimal Mistakes, which can be downloaded [here](https://github.com/mmistakes/minimal-mistakes). Also, I chose this theme because it has vast documentation.
+Here we will add content to our site, but first, let us find a template (web theme) that will make our site look nice. You can easily find themes on the internet. I use Minimal Mistakes, which can be downloaded [here](https://github.com/mmistakes/minimal-mistakes). Also, I chose this theme because it has vast documentation.
 
-Different types of theme installations are possible, so I decide to use remote theme installation. For this, we set the Gemfile as follows:
+Different types of theme installations are possible, so I decided to use remote theme installation. For this, we set the Gemfile as follows:
 ```
 source "https://rubygems.org"
 
@@ -111,8 +112,8 @@ remote_theme: "mmistakes/minimal-mistakes@4.24.0"
 
 ### Pushing the website on GitHub
 
-In GitHub, we create our repository and push when some changes to the site. Nothing special here :)
+When we make changes to a site, we create our repository on GitHub and push it. Nothing special here. :) By creating a repository, we have a central location where all changes can be tracked and managed. This allows us to easily view and manage the changes we make, as well as share them with other developers. Additionally, using GitHub allows us to easily merge changes from multiple developers, ensuring that all changes are accounted for and up-to-date. 
 
 ### Deployment on Netlify
 
-In Netlify, you click on ***Add new site*** , and you will connect with the GitHub and the repository that contains your site. When the site is created, a random name is choosen. We can change it. If you want, you can also add a custom domain in Netlify so that your site will be published automatically on your domain.
+In Netlify, you click on ***Add new site*** , and you will connect with GitHub and the repository that contains your site. When the site is created, a random name is chosen. We can change it. If you want, you can also add a custom domain to Netlify so that your site will be published automatically on your domain.

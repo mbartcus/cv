@@ -9,16 +9,17 @@ toc_label: "My Table of Contents"
 toc_sticky: true
 ---
 
-Each time I reinstall my mac os system I have to do the same installation steps.
-It is difficult to remember the necessary tools and the steps to install them, there is why up till now I install them in time the specific tool is needed. However, I noticed that it is better to configure the computer from start and have all the applications installed. There is why I make it more simple by writing this article, explaining what I install, and how I configure my Mac M1 for developing on machine learning and doing data science.
+Each time I reinstall my Mac OS system I have to do the same installation steps.
 
-Also, you can find it helpful because of the list of the best founded apps and their configuration can be found in this article. Of course this article will be changed during time, as my experience using the mac os applications.
+It is difficult to remember what tools are needed and how to use them, so I install them as soon as the specific tool is needed. However, I noticed that it is better to configure the computer from the start and have all the applications installed. I made it more simple by writing this article, explaining what I install, and how I configure my Mac M1 for machine learning and data science development.
+
+This article also includes a list of the best-founded apps and their configuration, which may be helpful to you. My experience using Mac OS applications will undoubtedly change this article over time.
 
 # Command Line installation
 
 ## homebrew & wget
 
-The first thing to install is the **homebrew** that is a package manager.
+The first thing to install is **homebrew** which is a package manager.
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -30,7 +31,7 @@ Using the homebrew, I install wget.
 brew install wget
 ```
 
-Next here are the applications, that I found very useful and installed on my mac.
+Next here are the applications that I found very useful and installed on my Mac.
 
 # Applications
 
@@ -38,8 +39,8 @@ Next here are the applications, that I found very useful and installed on my mac
  - type space to find a file
  - opens any app we want
  - type **define** to define any word you want
- - type something to search google directly
- - type **youtube/amazon/google** to search in thees directly
+ - type something to search Google directly
+ - type **youtube/amazon/google** to search in these directly
  - type empty to empty trash
 
 2) [Dropzone](https://apps.apple.com/fr/app/dropzone-4/id1485052491?mt=12)
@@ -57,7 +58,7 @@ Next here are the applications, that I found very useful and installed on my mac
 ```bash
 brew install --cask alt-tab
 ```
-Change Appearance settings theme into Windows10 and into controls for shortcut. The first should change between all the applications, and the second should change between the application that is currently active.
+Switch to the Appearance settings theme in Windows 10 and into the shortcut controls. The first should change between all the applications, and the second should change between the application that is currently active.
 
 9) [Monitor Control](https://github.com/MonitorControl/MonitorControl) allow to modify the brightness of the monitor
 10) [App Cleaner](https://freemacsoft.net/appcleaner/) application to delete applications for mac
@@ -65,23 +66,23 @@ Change Appearance settings theme into Windows10 and into controls for shortcut. 
 12) [Maccy](https://maccy.app) Clipboardmanager to keep the copy history
 13) MindNote
 14) Be Focused
-15) Gifox - application that creates a gif from a recorded zone of your screen
+15) Gifox - application that creates a gif from a recorded area of your screen
 16) [MacDown](https://macdown.uranusjr.com)
 17) Bartender 4
 
 
 
-I am a Data Scientist, and I work on different projects. To manage environments for a specific project I use anaconda/miniconda. The installation of miniconda on the M1 chip mac is specific so theese steps are only helpful for thoos with a Mac M1 chip.
+I am a data scientist, and I work on different projects. To manage environments for a specific project I use Anaconda/Miniconda. The installation of Miniconda on the M1 chip Mac is specific so these steps are only helpful for those with a Mac M1 chip.
 
 ## miniconda for MAC M1
 
-First we need to verify if we are in arm64 terminal
+We need to make sure we're in arm64 mode first
 ```bash
 > uname -m  
 arm64
 ```
 
-Now we download miniconda with wget:
+With wget, we'll download miniconda:
 
 ```bash
 wget [https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-arm64.sh](https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-arm64.sh)
@@ -92,4 +93,4 @@ Start the installation
 sh ./Miniconda3-latest-MacOSX-arm64.sh
 ```
 
-Once the installation is over we will prompt to run conda init. Here we can repond `yes`.
+We'll ask you to run conda init once the installation is done. Here, we can say `yes`.

@@ -13,49 +13,50 @@ toc_sticky: true
 ---
 
 # Short bio
-I come from a beautiful eastern Europe country Moldova, where I finished my license in **software engineering**.
+I'm originally from a beautiful Eastern European country called Moldova, where I graduated with a ***software engineering*** license.
 
-{% include figure image_path="/assets/img/moldova_image.jpg" alt="Orheiul Vechi" caption="My favorite place from Moldova. It's name is 'Orheiul Vechi', in english 'Old Orhei'. A natural and historical complex. It is placed around 50km from the capital of Moldova (Chisinau). I strongly recommend you to visit this place if you are going to visit Moldova.  " %}
+{% include figure image_path="/assets/img/moldova_image.jpg" alt="Orheiul Vechi" caption="My favorite place from Moldova. Its name is 'Orheiul Vechi', in English 'Old Orhei'. A natural and historical complex. It is located around 50km from the capital of Moldova (Chisinau). I strongly recommend you visit this place if you are planning to visit Moldova.  " %}
 
-In the end, I got experience in developing desktop and web applications. I was very passionate, but I decided to move to France. Here, I obtained a master's degree in Computer Science, that is in **Data mining and exploration EID2**, at University Paris 13 and then a **Ph.D.** in **Statistical Learning** at the University of Toulon. I had different opportunities to gain experience in academic and company environments. Today, I am working on the 11 projects proposed by the Open Classroom course for the **Data Scientist: Artificial Intelligence Engineer** to improve my skills.
+In the end, I gained experience developing desktop and web applications. I was very passionate, but I decided to move to France. I earned my master's degree in Computer Science, specializing in ***Data Mining and Exploration*** EID2, at the University of Paris 13. In addition, I obtained a Ph.D. in ***Statistical Learning*** at the University of Toulon. I had different opportunities to gain experience in academic and company environments. Today, I am working on the 11 projects proposed by the Open Classroom course for ***Data Scientist: Artificial Intelligence Engineer*** to improve my skills.
 
-My professional interests are in ***artificial intelligence*** 🧠 : ***machine learning***, ***deep learning*** techniques and their text/Visio/audio applications.
+My professional interests are in **AI**: "machine learning," "deep learning," and their applications to text, video, and audio.
 
 My hobbies are sports (running 🏃️, foot, chess), travel🧳, and movies/series.
 
 On weekends I am the happiest man spending time with my family - my wife and our boys 👨‍👩‍👦‍👦.
 
-You can get my short [CV](/assets/docs/CV_Bartcus.pdf) in a pdf format, or you can consult it in more detail in a digital form on this page.
+You can get my short [CV](/assets/docs/CV_Bartcus.pdf) in pdf format, or you can consult it in more detail in digital form on this page.
 
-I am looking forward 👀 to getting in touch with you and working on some great projects.
+I am looking forward 👀 to getting in touch with you and working on some fascinating projects.
 {: .text-left}
 
-# Main Skills as a Data Scientist
+# Primary Skills as a Data Scientist
+
 - Process structured or unstructured data
 - Control data quality, detect patterns, outliers
-- Propose and put into practice statistical models (regressions, etc.) or data science (machine learning, etc.) to meet business challenges
+- Propose and apply statistical models (regressions, etc.) or data science (machine learning, etc.) to meet business challenges
 - Collaborate with technical and business teams to define needs and explain results
 - Present the results (reports, presentations, etc.)
 - Implement and develop algorithms and tools in Python or R, relying on associated statistical and data science libraries
 - Develop and industrialize data science algorithms (machine learning, NLP, etc.)
 
 # Technical skills
-- Programming Languages. As a software engineer background, many programming languages are studied by me. These are the 3 main languages used in my work as a Data Scientist:
-  - Python (is the main programming language I use all the day)
+- Programming languages. As a software engineer, I have studied many programming languages. These are the 3 main languages used in my work as a Data Scientist:
+  - Python (is the primary programming language I use all day)
   - Matlab (used during my Ph.D. and Master 2)
-  - R (contributed to the developing of an open source R package that is available on [GitHub link](https://github.com/fchamroukhi/MEteorits) )
+  - R (contributed to the development of an open-source R package that is available on [GitHub link](https://github.com/fchamroukhi/MEteorits) )
 
 # Soft Skills
 
-- ***Result Oriented***: I am putting my goals every week so that I archive them. I can use different tools like MindNote, TodoList, Notion to organize my tasks and work. Each experience shows that I archived my goals on time, and never gave back.
+- ***Result Oriented***: Every week, I archive my goals. I can use different tools like MindNote, TodoList, and Notion to organize my tasks and work. Through each experience, I achieved my goals on time, and I never turned back.
 
 - ***Time management***: I like to manage my time and use it as optimally as possible. A google calendar is a great tool to organize and manage your time.
 
-- ***Motivation to learn***: I consider myself very motivated to learn and to gather new skills each day. This skill helped me a lot in passing throw my Ph.D. and then working on different machine-learning projects as a PostDoc. I  stay up to date with state of the art of machine learning technology.
+- ***Motivation to learn***: I consider myself very motivated to learn and acquire new skills each day. This skill helped me a lot in passing through my Ph.D. and then working on different machine-learning projects as a PostDoc. I stay up to date with the state of the art in machine learning technology.
 
 - ***Analytical mind***: I developed this skill as a Ph.D. in Computer Science during all of my previous experiences.
 
-- ***Conversation***: I like interacting with the team and clients we work with.
+- ***Conversation***: I like interacting with the team and the clients we work with.
 
 - ***Empathy***: I like to listen, understand and share the feelings of others.
 
@@ -71,7 +72,7 @@ Currently a student at OpenClassroom as an Engineer in Artificial Intelligence. 
 September 2020 – February 2022
 
 ***Description:***
-Automatic segmentation of 3D lung nodules through deep learning. Lung cancer is one of the leading causes of cancer death worldwide. Characterization of lung tumors should be done by machine learning using radiomics techniques. Therefore we need to automatically segment the lung nodules in CT images. To segment lung tumors, we use deep learning which gives good results in terms of quality, robustness, and computation time.
+Automatic segmentation of 3D lung nodules through deep learning. Lung cancer is one of the leading causes of cancer death worldwide. Characterization of lung tumors should be done by machine learning using radiomics techniques. Therefore we need to automatically segment lung nodules in CT images. To segment lung tumors, we use deep learning which gives reliable results in terms of quality, robustness, and computation time.
 {: .text-justify}
 <a href="/portfolio/clb/" class="btn btn--success">Project</a>
 
@@ -127,11 +128,12 @@ This thesis focuses on statistical learning and multi-dimensional data analysis.
   University Paris 13
 
   **Most important Skills:**
-  - capable of understanding a complex computer problem
-  - general computer science learning for research and professional approaches
-  - acquire in-depth knowledge in artificial learning (Machine Learning), data science (Data Science), decision-making computing (Business Intelligence) fields.
-  - data exploration and exploitation tools
-  - Ability to conduct fundamental or applied research work on a well-targeted problem in the field of data science and artificial intelligence.
+  
+- capable of understanding a complex computer problem
+- general computer science learning for research and professional approaches
+- gain in-depth knowledge of artificial learning (Machine Learning), data science (Data Science), and decision-making computing (Business Intelligence).
+- Data exploration and exploitation tools
+- Ability to conduct fundamental or applied research work on a well-targeted problem in the field of data science and artificial intelligence.
 
   [Here](http://odf.univ-paris13.fr/_contents/ametys%253Aodf/ametys%253Acontents/program-gi4ei2d-116-2-2/_metadata/attachments/1/attachment/master_GALILEE_EID2-1%2520valide.pdf?objectId=programContent%3A%2F%2F47cc4dc3-bd27-4a44-be5c-a370f4259200&download=true) is the link to the full path.
 
