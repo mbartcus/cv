@@ -91,7 +91,7 @@ March 2017 – February 2018
 ***Description:***
 Co-clustering is a data mining technique that aims at identifying the underlying structure between the rows and the columns of a data matrix in the form of homogeneous blocks. It finds many real-world applications, however many current co-clustering algorithms are not suited to large-size data sets. One of the successfully used approaches to co-cluster big-sized data reaching millions of instances and tens of thousands of values per dimension is the MODL co-clustering method that optimizes a criterion based on a regularized likelihood. However, difficulties are encountered with up to billions of values per variable. This post-doc focuses on developing a co-clustering algorithm, given that the MODL criterion allows us to efficiently deal with very large data sets that do not fit in memory. My work was to co-cluster large-scale data sets in a reasonable time by using less RAM memory than existing co-clustering techniques. Real-world data sets with variable pairs of values: Texts-Words, Source-Target web sites, and User-Films.
 {: .text-justify}
-<a href="https://github.com/mbartcus/TwoModeCoclustering" class="btn btn--dark">Project</a>
+<a href="https://github.com/mbartcus/TwoModeCoclustering" class="btn btn--secondary">Github</a>
 
 
 ## PostDoc researcher at Toulon University, Toulon France
