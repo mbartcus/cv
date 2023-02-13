@@ -12,9 +12,14 @@ classes: wide
 #  overlay_filter: linear-gradient(rgba(255, 0, 0, 0.5), rgba(0, 255, 255, 0.5))
 ---
 
-![image-left](/assets/img/welcome.jpg){: .align-left}
+
+![image-left](/assets/img/DS_AI_ML.png){: .align-left}
+
 Hy there 👋!!!
 
 >My name is Marius 🤝. Welcome to my website.
+
+I am interested in artificial intelligence: machine learning, deep learning and their applications. 
+
 Here, you can check my [digital cv](./cv).
 Also, you can find my [projects](./portfolio) and [blog](./blog) here.
