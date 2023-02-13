@@ -19,7 +19,8 @@ Hy there 👋!!!
 
 >My name is Marius 🤝. Welcome to my website.
 
-I am interested in artificial intelligence: machine learning, deep learning and their applications. 
+My interests are in artificial intelligence: machine learning, deep learning and their applications. 
 
 Here, you can check my [digital cv](./cv).
 Also, you can find my [projects](./portfolio) and [blog](./blog) here.
+Check out my [visit card](./assets/carte_visite/carte_visite.pdf).
