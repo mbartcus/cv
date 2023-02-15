@@ -7,5 +7,3 @@ author_profile: true
 title: My blog
 permalink: /blog/
 ---
-
->Will be published shortly
