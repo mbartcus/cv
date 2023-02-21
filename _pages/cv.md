@@ -96,7 +96,7 @@ Co-clustering is a data mining technique that aims at identifying the underlying
 
 ## PostDoc researcher at Toulon University, Toulon France
 ![image-left](/assets/icons/logo-utln.png){: .align-left}
-December 2015 – July 2016
+December 2015 – February 2017
 
 ***Description:***
 I worked on the two applications that are Humpback whale song structuration and Birds classification. For the humpback structuration was to segment the signal to give different hypothesis of these song. Bayesian non-parametric learning approaches are used to automatically decompose the whale signal and produce song units that are considered as kind of whale alphabet. For the second application the task was to classify the bird songs in an automatic way to identify bird species in some recording. Also in a context when several species are present in a recording, the goal is to find the foreground specie (the one that appears closes to the microphone), this induced to a single label classification problem.
