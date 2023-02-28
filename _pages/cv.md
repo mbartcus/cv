@@ -65,6 +65,11 @@ I am looking forward 👀 to getting in touch with you and working on some fasci
 
 Currently a student at OpenClassroom as an Engineer in Artificial Intelligence. I'm working on 11 projects which carry Data Analysis and Exploration, Data pre-processing, Supervised and Non-supervised modeling, Deep Learning, NLP, Cloud Computing, Visualization, and Model Deployment. [Here](https://openclassrooms.com/fr/paths/188-ingenieur-ia), the full description of this online learning path is available.
 
+<a href="/portfolio/translation_azure/" class="btn btn--success">Project 1: Language Translator</a>
+
+
+<a href="/portfolio/chatbot/" class="btn btn--success">Project 10: ChatBot for booking flights</a>
+
 # Experiences
 
 ## AI Engineer at Centre Léon Berard & INSA, Lyon, France
