@@ -67,6 +67,7 @@ Currently a student at OpenClassroom as an Engineer in Artificial Intelligence. 
 
 <a href="/portfolio/translation_azure/" class="btn btn--success">Project 1: Language Translator</a>
 
+<a href="/portfolio/future_vision_transport/" class="btn btn--success">Project 8: Semantic segmentation for autonomy future cars </a>
 
 <a href="/portfolio/chatbot/" class="btn btn--success">Project 10: ChatBot for booking flights</a>
 
