@@ -45,6 +45,7 @@ I am looking forward 👀 to getting in touch with you and working on some fasci
   - Python (is the primary programming language I use all day)
   - Matlab (used during my Ph.D. and Master 2)
   - R (contributed to the development of an open-source R package that is available on [GitHub link](https://github.com/fchamroukhi/MEteorits) )
+  - SQL
 
 # Soft Skills
 

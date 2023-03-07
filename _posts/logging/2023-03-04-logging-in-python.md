@@ -13,7 +13,7 @@ Logging is an essential part of any software development project. It allows deve
 
 - every log should inform us about the time it was generated,
 - every log must indicate its type (error, warning, general information, etc),
-- every log should contain some information about what is doing the log and where to look for it's source.
+- every log should contain some information about what is doing the log and where to look for its source.
 
 As part of this short article, I will provide you with information on how to create logging in to Python correctly. 
 
@@ -23,9 +23,9 @@ Here, I will discuss how to make logging into Python.
 
 # Setting up 
 
-Currently, I am programming in Python. Each project uses logging. For that, I will create a separate project called utils, which will contain all of my common functions including logging. We also create a module for the utils project (folder) and name it ```mylog```. Well obviously, do not forget to include the ```__init__.py``` to make it a proper module.
+Currently, I am programming in Python. Each project uses logging. For that, I will create a separate project called utils, which will contain all of my common functions including logging. We also create a module for the utils project (folder) and name it ```utils```. Well obviously, do not forget to include the ```__init__.py``` to make it a proper module.
 
-In ```mylog``` folder we create a file named ```logger.py```. This script contains the logging logic. This project aims to implement a logger instance that can be used in all projects that I will create in the future. We will basically replace the print function with one of the logging methods on the logger object, such as ```debug()```, ```info()```, ```warning()```, ```error()```, or ```critical()```.
+In ```utils ``` folder we create a file named ```custom_logger.py```. This script contains the logging logic. This project aims to implement a logger instance that can be used in all projects that I will create in the future. We will basically replace the print function with one of the logging methods on the logger object, such as ```debug()```, ```info()```, ```warning()```, ```error()```, or ```critical()```.
 
 ## Step 1:  Import the ```logging``` module
 
@@ -35,7 +35,7 @@ The first step in creating a logging system is to import the logging module into
 import logging
 ```
 
-Therefore, this is the first line of our ```logger.py``` file.
+Therefore, this is the first line of our ```custom_logger.py ``` file.
 
 ## Step 2: Create a logger
 
@@ -146,5 +146,7 @@ logger.error('Error message')
 logger.critical('Critical message')
 ```
 
-{% include figure image_path="/assets/img-blog/logging/result.png" alt="this is a placeholder image" caption="Figure 1: The log results of printed in the logs.log file." %}
+{% include figure image_path="/assets/img-blog/logging/result.png" alt="this is a placeholder image" caption="Figure 1: The log results printed in the logs.log file." %}
+
+You can take a look at my <a href="https://github.com/mbartcus/utils" class="btn btn--primary">Github</a> repository to download the code.
 
