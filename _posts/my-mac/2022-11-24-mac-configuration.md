@@ -79,6 +79,22 @@ Another tool that can be installed if we need to use some Intel Core application
 /usr/sbin/softwareupdate --install-rosetta --agree-to-license
 ```
 
+You can download the file from the following [link](mac_configuration.sh).
+
+# run the bash file
+
+To use this script, save it as a `.sh` file, navigate to the directory where you saved it, and make it executable with the command:
+
+```bash
+chmod +x data-science-setup.sh
+```
+
+Then run the script with the command
+
+```bash
+./data-science-setup.sh
+```
+
 # Applications
 Next here are the applications that I found very useful to install on my Mac. However, I was not able to install them with bash, therefore I installed them manually.
 
