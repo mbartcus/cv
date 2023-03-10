@@ -79,7 +79,7 @@ Another tool that can be installed if we need to use some Intel Core application
 /usr/sbin/softwareupdate --install-rosetta --agree-to-license
 ```
 
-You can download the file from the following [link](mac_configuration.sh).
+You can download the file from the following [link](/assets/sh_files/mac_configuration.sh).
 
 # run the bash file
 
