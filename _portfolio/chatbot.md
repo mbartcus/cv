@@ -386,6 +386,13 @@ Check the resource mode ```Classic``` and click on ```Renew + create``` as in Fi
 
 Once we created our Application Insights resources we can use the instrumentation key to configure our application insights sdk. We can copy it to the environment variables (.env file) to use it in our bot that will be created.
 
+Also, here we can create some alerts to monitor the performance of our bot. For example, we can create an alert to monitor the number of requests that are made to our bot. We can also create an alert to monitor the number of errors that are made by our bot. In this application I created an alert within a gap of 5 minutes, if bot proposition of the booking does not satisfy the user. Here is an example of an alert that I created.
+
+<figure>
+<a href="/assets/img_portfolio/chatbot/alerts_ins.png"><img src="/assets/img_portfolio/chatbot/alerts_ins.png"></a>
+<figcaption>Figure 6: Viewing an alert.</figcaption>
+</figure>
+
 # Bot Builder
 
 In this part we create our bot using the Bot Framework SDK with python. We will focus on (21.corebot-app-insights)[https://github.com/microsoft/BotBuilder-Samples/tree/main/samples/python/21.corebot-app-insights] to create our bot for booking flights. This is because this is a perfect example for us because:
@@ -393,7 +400,7 @@ In this part we create our bot using the Bot Framework SDK with python. We will 
 - this bot was created with Bot Framework,
 - it uses LUIS to implement core AI capabilities
 - it implements multi turn conversation using Dialogs
-- it will handle user interruptions for such things as ```Help```or ```Cancel````
+- it will handle user interruptions for such things as ```Cancel````
 - promt for and validate requests for information from the user
 - finally it uses the application insights that was created in the previous section
 
@@ -417,7 +424,81 @@ python app.py
 
 {% include figure image_path="/assets/img_portfolio/chatbot/my_bot.png" alt="this is a placeholder image" caption="Figure 6: Fly bot." %}
 
+This is the basic bot that we will use for our project. We will now modify it to make it work with our LUIS model and extract the entities from the user's request. We will also add the application insights to monitor the performance of the bot. 
+
+First of all we add the entities that we need in BookingDetails class. 
+
+```python
+class BookingDetails:
+    def __init__(
+        self,
+        destination: str = None,
+        origin: str = None,
+        start_date: str = None,
+        end_date: str = None,
+        budget: int = None,
+    ):
+        self.destination = destination
+        self.origin = origin
+        self.start_date = start_date
+        self.end_date = end_date
+        self.budget = budget
+```
+
+Then we adapt our code on BookingDialog class. We add steps like the start date and end date. Here is an example of the start date step:
+
+```python
+async def start_date_step(
+        self, step_context: WaterfallStepContext
+    ) -> DialogTurnResult:
+        """Prompt for start date."""
+        booking_details = step_context.options
+        
+        # Capture the results of the previous step
+        booking_details.destination = step_context.result
+
+        if booking_details.start_date is None or self.is_ambiguous(booking_details.start_date):
+            return await step_context.begin_dialog(
+                DateResolverDialog.START_DATE_DIALOG_ID, booking_details.start_date
+            )
+        
+        return await step_context.next(booking_details.start_date)
+
+```
+
+We modify the LUIS recognizer to extract the entities from the user's request. We add the entities that we need in BookingDetails class.  
+
+We also add the application insights to monitor the performance of the bot. We use the final step to logg in the application insights with AzureLogHandler. If the flight was booked we logg it with the level INFO. If the customer was not satisfied we logg it with the level ERROR.
+
+```python
+async def final_step(self, step_context: WaterfallStepContext) -> DialogTurnResult:
+        """Complete the interaction and end the dialog."""
+        booking_details = step_context.options
+        
+        if step_context.result:
+            self.logger.setLevel(logging.INFO)
+            self.logger.info('The flight is booked and the customer is satisfied.')
+
+            return await step_context.end_dialog(booking_details)
+
+        prop = {'custom_dimensions': booking_details.__dict__}
+        
+        self.logger.setLevel(logging.ERROR)
+        self.logger.error('The customer was not satisfied about the bots proposals', extra=prop)
+        
+        
+        return await step_context.end_dialog()
+```
 
 # Deploing the bot in Azure
 
-On my local machine, everything works as expected. Now we need it deployed on the server so that everyone in the company can use it to book their flights. We use Azure for this.
+On my local machine, everything works as expected. Now we need it deployed on the server so that everyone in the company can use it to book their flights. We use Azure for this and create the Azure Web App. Here is an example of the Azure Web App that I created.
+
+
+<figure>
+<a href="/assets/img_portfolio/chatbot/azure_web_app.png"><img src="/assets/img_portfolio/chatbot/azure_web_app.png"></a>
+<figcaption>Figure 7: Creating the Azure Web App.</figcaption>
+</figure>
+
+We need to do some configurations in order the bot to work on the server. First we need to go to the Configuration tab, General Settings -> Startup command and set it to ```python -m aiohttp.web -H 0.0.0.0 -P 8000 app:main```. 
+
