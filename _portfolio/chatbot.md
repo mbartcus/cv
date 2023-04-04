@@ -445,7 +445,7 @@ class BookingDetails:
         self.budget = budget
 ```
 
-Then we adapt our code on BookingDialog class. We add steps like the start date and end date. Here is an example of the start date step:
+We adapt our code to the BookingDialog class. We add steps like the start and end date. Here is an example of the start date step:
 
 ```python
 async def start_date_step(
@@ -466,9 +466,9 @@ async def start_date_step(
 
 ```
 
-We modify the LUIS recognizer to extract the entities from the user's request. We add the entities that we need in BookingDetails class.  
+We modify the LUIS recognizer to extract entities from the user's request. We add the entities to the BookingDetails class.
 
-We also add the application insights to monitor the performance of the bot and monitor the bad iteractions (experiences) between the chat bot and the user. We use the final step to log in the application insights with AzureLogHandler. We track two infos about the experience of the user. The first one is if the flight was satisfied with the bot's proposals and the flight was booked. And the second one is if the customer was not satisfied with the bot's proposals. If the flight was booked we log it with the level INFO. If the customer was not satisfied we log it with the level ERROR. 
+We also add application insights to monitor the bot's performance and monitor the problematic interactions (experiences) between the chatbot and the user. We use the final step to log in the application insights with AzureLogHandler. We track two details about a user's experience. The first thing to check is if the flight was satisfied with the bot's proposals and booked. And the second is if the customer was not satisfied with the bot's proposals. If the flight was booked we log it with the level INFO. A customer who is not satisfied is logged with the level ERROR.
 
 ```python
 async def final_step(self, step_context: WaterfallStepContext) -> DialogTurnResult:
@@ -490,14 +490,14 @@ async def final_step(self, step_context: WaterfallStepContext) -> DialogTurnResu
         return await step_context.end_dialog()
 ```
 
-Also, if the user is not satisfied three times with the bot's proposals during five minutes, we trigger an alert. We create it in the Application Insights, Alerts section. We click `Create` followed by `Create rule`, and create our alert. Here is an example of the alert that I created.  
+In addition, we trigger an alert if the user does not accept the bot's proposal three times within five minutes. The alert is created under Application Insights, Alerts. We click `Create` followed by `Create rule`, and set up our alert. Here is an example of an alert I made.
 
 <figure>
 <a href="/assets/img_portfolio/chatbot/alert_ins.png"><img src="/assets/img_portfolio/chatbot/alert_ins.png"></a>
 <figcaption>Figure 7: Viewing the alert.</figcaption>
 </figure>
 
-We can see that the alert was triggered three times during five minutes. We have one alert in the Error section. We can also observe the query that was used to trigger the alert. We search in the text if "not satisfied" appears in the project trace message. We count them, and if it appears 3 times we trigger the alert.
+As can be seen, the alert was triggered three times in five minutes. In the Error section, we have one alert. It is also possible to view the query that initiated the alert. We look for "not satisfied" in a trace message. The alert will be triggered if an item appears three times.
 
 
 # Deploing the bot in Azure
