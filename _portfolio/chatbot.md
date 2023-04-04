@@ -468,7 +468,7 @@ async def start_date_step(
 
 We modify the LUIS recognizer to extract the entities from the user's request. We add the entities that we need in BookingDetails class.  
 
-We also add the application insights to monitor the performance of the bot. We use the final step to logg in the application insights with AzureLogHandler. If the flight was booked we logg it with the level INFO. If the customer was not satisfied we logg it with the level ERROR.
+We also add the application insights to monitor the performance of the bot and monitor the bad iteractions (experiences) between the chat bot and the user. We use the final step to log in the application insights with AzureLogHandler. We track two infos about the experience of the user. The first one is if the flight was satisfied with the bot's proposals and the flight was booked. And the second one is if the customer was not satisfied with the bot's proposals. If the flight was booked we log it with the level INFO. If the customer was not satisfied we log it with the level ERROR. 
 
 ```python
 async def final_step(self, step_context: WaterfallStepContext) -> DialogTurnResult:
@@ -490,6 +490,16 @@ async def final_step(self, step_context: WaterfallStepContext) -> DialogTurnResu
         return await step_context.end_dialog()
 ```
 
+Also, if the user is not satisfied three times with the bot's proposals during five minutes, we trigger an alert. We create it in the Application Insights, Alerts section. We click `Create` followed by `Create rule`, and create our alert. Here is an example of the alert that I created.  
+
+<figure>
+<a href="/assets/img_portfolio/chatbot/alert_ins.png"><img src="/assets/img_portfolio/chatbot/alert_ins.png"></a>
+<figcaption>Figure 7: Viewing the alert.</figcaption>
+</figure>
+
+We can see that the alert was triggered three times during five minutes. We have one alert in the Error section. We can also observe the query that was used to trigger the alert. We search in the text if "not satisfied" appears in the project trace message. We count them, and if it appears 3 times we trigger the alert.
+
+
 # Deploing the bot in Azure
 
 On my local machine, everything works as expected. Now we need it deployed on the server so that everyone in the company can use it to book their flights. We use Azure for this and create the Azure Web App. Here is an example of the Azure Web App that I created.
@@ -497,7 +507,7 @@ On my local machine, everything works as expected. Now we need it deployed on th
 
 <figure>
 <a href="/assets/img_portfolio/chatbot/azure_web_app.png"><img src="/assets/img_portfolio/chatbot/azure_web_app.png"></a>
-<figcaption>Figure 7: Creating the Azure Web App.</figcaption>
+<figcaption>Figure 8: Creating the Azure Web App.</figcaption>
 </figure>
 
 We need to do some configurations in order the bot to work on the server. First we need to go to the Configuration tab, General Settings -> Startup command and set it to ```python -m aiohttp.web -H 0.0.0.0 -P 8000 app:main```. 
