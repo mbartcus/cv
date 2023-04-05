@@ -376,7 +376,7 @@ Finally, what happens to the utterances that are examined with 0% accuracy? The 
 
 # Application Insights
 
-To control the performance of the model in production we use Application Insights. This will permit us to answer the question of "how many customers used the application. It will give us availability and performance monitoring. Go to the Azure portal and create the application Insights as 
+To control the performance of the model in production we use Application Insights. This will permit us to answer the question of "how many customers used the application. It will give us availability and performance monitoring. Go to the Azure portal and create the application Insights as in the figure below.
 
 {% include figure image_path="/assets/img_portfolio/chatbot/AppIns.png" alt="this is a placeholder image" caption="Figure 4: Application Insights." %}
 
@@ -385,13 +385,6 @@ Check the resource mode ```Classic``` and click on ```Renew + create``` as in Fi
 {% include figure image_path="/assets/img_portfolio/chatbot/AppIns2.png" alt="this is a placeholder image" caption="Figure 5: Creating the Application Insights." %}
 
 Once we created our Application Insights resources we can use the instrumentation key to configure our application insights sdk. We can copy it to the environment variables (.env file) to use it in our bot that will be created.
-
-Also, here we can create some alerts to monitor the performance of our bot. For example, we can create an alert to monitor the number of requests that are made to our bot. We can also create an alert to monitor the number of errors that are made by our bot. In this application I created an alert within a gap of 5 minutes, if bot proposition of the booking does not satisfy the user. Here is an example of an alert that I created.
-
-<figure>
-<a href="/assets/img_portfolio/chatbot/alerts_ins.png"><img src="/assets/img_portfolio/chatbot/alerts_ins.png"></a>
-<figcaption>Figure 6: Viewing an alert.</figcaption>
-</figure>
 
 # Bot Builder
 
@@ -468,7 +461,7 @@ async def start_date_step(
 
 We modify the LUIS recognizer to extract entities from the user's request. We add the entities to the BookingDetails class.
 
-We also add application insights to monitor the bot's performance and monitor the problematic interactions (experiences) between the chatbot and the user. We use the final step to log in the application insights with AzureLogHandler. We track two details about a user's experience. The first thing to check is if the flight was satisfied with the bot's proposals and booked. And the second is if the customer was not satisfied with the bot's proposals. If the flight was booked we log it with the level INFO. A customer who is not satisfied is logged with the level ERROR.
+We add application insights to monitor the bot's performance and monitor the problematic interactions (experiences) between the chatbot and the user. Therefore, we use the final step to log in the application insights with AzureLogHandler. Furthermore, we track two details about a user's experience. The first thing to check is if the flight was satisfied with the bot's proposals and booked. And the second is if the customer was not satisfied with the bot's proposals. If the flight was booked, we log it with the level INFO. A customer who is not satisfied is logged with the level ERROR.
 
 ```python
 async def final_step(self, step_context: WaterfallStepContext) -> DialogTurnResult:
@@ -498,6 +491,13 @@ In addition, we trigger an alert if the user does not accept the bot's proposal 
 </figure>
 
 As can be seen, the alert was triggered three times in five minutes. In the Error section, we have one alert. It is also possible to view the query that initiated the alert. We look for "not satisfied" in a trace message. The alert will be triggered if an item appears three times.
+
+In future work we can use application insights to:
+ - monitor the number of requests that are made to our bot
+ - monitor the number of errors that are made by our bot (ex: the user does not enter the correct date format)
+ - monitor the number of users that are using our bot
+ - monitor the number of times the user does not finalize the booking process
+ - etc.
 
 
 # Deploing the bot in Azure
