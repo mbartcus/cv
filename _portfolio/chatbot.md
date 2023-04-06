@@ -518,7 +518,7 @@ We need to do some configurations in order the bot to work on the server. First 
 
 # Monitoring the performance of the model in production
 
-The purpose of this section is to demonstrate the methodology used to monitor the performance of the model in production for this project. Figure 4 depicts the current architecture for MVP, which is the first version of the application. This type of architecture can not monitor the performance of the model in production. The disadvantage is the fact that we can not update our model regarding some new data. It should not be considered definitive. Our future work will focus on developing a target architecture that will enable us to monitor and update our model. As a result, the chatbot will be more efficient.
+The purpose of this section is to demonstrate the methodology used to monitor the performance of the model in production for this project. Figure 9 depicts the current architecture for MVP, which is the first version of the application. This type of architecture can not monitor the performance of the model in production. The disadvantage is the fact that we can not update our model regarding some new data. It should not be considered definitive. Our future work will focus on developing a target architecture that will enable us to monitor and update our model. As a result, the chatbot will be more efficient.
 
 <figure>
 <a href="/assets/img_portfolio/chatbot/oc10_p1.png"><img src="/assets/img_portfolio/chatbot/oc10_p1.png"></a>
