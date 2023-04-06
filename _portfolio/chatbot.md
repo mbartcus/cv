@@ -304,19 +304,19 @@ Entities: {'or_city': ['Lyon'], 'dst_city': ['Paris'], 'geographyV2': [{'value':
 We can see that the LUIS model that we trained found the entities as expected. 
 
 ### Model Evaluation 
-Understanding the performance of the model requires evaluating it. In order to evaluate the LUIS model, it is necessary to assess both its accuracy and performance as it pertains to understanding user intents and extracting relevant information from the user's input. 
+It is necessary to evaluate the model in order to understand its performance. The LUIS model must be evaluated both in terms of its accuracy and performance as it pertains to understanding user intents and extracting relevant information from the input of the user.
 
-To evaluate the model we use the test dataset. The prediction of entities is compared with actual entities. A value of 1 is added to the true value if the predicted entity matches the real one. The correct value is increased by 0.5 if part of the predicted entity is contained in the true entity. We compute our accuracy score as follows:
+The test dataset is used to evaluate the model. A comparison is made between the predicted and actual entities. If the predicted entity matches the real one, a value of 1 is added to the true value. If part of the predicted entity is contained in the true entity, the correct value is increased by 0.5. Our accuracy score is calculated as follows:
 
 ```
 (correct_entity / len(true_entities)) * 100
 ```
 
-Based on the test data, we obtain a precision of 59.71% between the predicted model and the real liberalization of the original data. As shown in Figure 3, each utterance has been evaluated. Several utterances were evaluated as having 100% precision. Many of them predict nothing, while others have a middle level of precision. We can examine these three types of utterances by observing them.
+Based on the test data, we obtained a precision of 59.71% between the predicted model and the actual liberalization of the original data. Figure 1 shows each utterance was evaluated. Several utterances were evaluated with 100% precision. Many of them predict nothing, while others have middle precision levels. We can examine these three types of utterances by observing them.
 
 {% include figure image_path="/assets/img_portfolio/chatbot/evaluation.png" alt="this is a placeholder image" caption="Figure 3: Evaluating model." %}
 
-First, let us examine the case in which entities can be predicted with 100% accuracy. Here, our test data looks like this:
+First, let us examine the case where entities can be predicted with 100% accuracy. Here, our test data looks like this:
 
 ```
 {'text': 'Can anything help resurrect my career at this point??? Is there any sadder rung in society than that of the failed writer\nOk you know what, maybe you can help\nGet me to Campinas to San Juan please\nMe, my wife, and my son',
@@ -370,13 +370,13 @@ We obtain the predicted entities:
  'budget': '4800??'}
 ```
 
-The budget entity is the source of this problem. Observe that the predicted entity took into consideration the questions at the end of the number. This is because there were no spaces here and cleaning the dataset could resolve this issue. However, for this project, I do not consider this.
+The budget entity is the source of this problem. Observe that the predicted entity took into consideration the questions at the end of the number. This is because there were no spaces here, and cleaning the dataset could resolve this issue. However, for this project, I do not consider this.
 
 Finally, what happens to the utterances that are examined with 0% accuracy? The same as for the 66% accuracy case. We find entities that contain some characters at the end, which explains that the predicted entity takes 0% of accuracy.
 
 # Application Insights
 
-To control the performance of the model in production we use Application Insights. This will permit us to answer the question of "how many customers used the application. It will give us availability and performance monitoring. Go to the Azure portal and create the application Insights as in the figure below.
+We use Application Insights to control the model's performance in production. This will permit us to answer the question of "how many customers used the application. It will give us availability and performance monitoring. Go to the Azure portal and create the application Insights as in the figure bellow. 
 
 {% include figure image_path="/assets/img_portfolio/chatbot/AppIns.png" alt="this is a placeholder image" caption="Figure 4: Application Insights." %}
 
@@ -384,7 +384,47 @@ Check the resource mode ```Classic``` and click on ```Renew + create``` as in Fi
 
 {% include figure image_path="/assets/img_portfolio/chatbot/AppIns2.png" alt="this is a placeholder image" caption="Figure 5: Creating the Application Insights." %}
 
-Once we created our Application Insights resources we can use the instrumentation key to configure our application insights sdk. We can copy it to the environment variables (.env file) to use it in our bot that will be created.
+Once we created our Application Insights resources, we can use the instrumentation key to configure our application insights sdk. We can copy it to the environment variables (.env file) to use it in our bot that will be created.
+
+We add application insights to monitor the bot's performance and monitor the problematic interactions (experiences) between the chatbot and the user. Therefore, we use the final step to log in the application insights with AzureLogHandler. Furthermore, we track two details about a user's experience. The first thing to check is if the flight was satisfied with the bot's proposals and booked. And the second is if the customer was not satisfied with the bot's proposals. If the flight was booked, we log it with the level INFO. A customer who is not satisfied is logged with the level ERROR.
+
+```python
+async def final_step(self, step_context: WaterfallStepContext) -> DialogTurnResult:
+        """Complete the interaction and end the dialog."""
+        booking_details = step_context.options
+        
+        if step_context.result:
+            self.logger.setLevel(logging.INFO)
+            self.logger.info('The flight is booked and the customer is satisfied.')
+
+            return await step_context.end_dialog(booking_details)
+
+        prop = {'custom_dimensions': booking_details.__dict__}
+        
+        self.logger.setLevel(logging.ERROR)
+        self.logger.error('The customer was not satisfied about the bots proposals', extra=prop)
+        
+        
+        return await step_context.end_dialog()
+```
+
+In addition, we trigger an alert if the user does not accept the bot's proposal three times within five minutes. The alert is created under Application Insights, Alerts. We click `Create` followed by `Create rule`, and set up our alert. Here is an example of an alert I create.
+
+
+<figure>
+<a href="/assets/img_portfolio/chatbot/alert_ins.png"><img src="/assets/img_portfolio/chatbot/alert_ins.png"></a>
+<figcaption>Figure 7: Viewing the alert.</figcaption>
+</figure>
+
+As can be seen, the ERROR level log was triggered three times in five minutes. Therefore in the Error section, the alert was created. It is also possible to view the query that initiated the alert. We look for "not satisfied" in a trace message. The alert will be created if an item appears three times.
+
+In future work, we can use application insights to:
+ - monitor the number of requests that are made to our bot
+ - monitor the number of errors that are made by our bot (ex: the user does not enter the correct date format)
+ - monitor the number of users that are using our bot
+ - monitor the number of times the user does not finalize the booking process
+ - etc.
+
 
 # Bot Builder
 
@@ -461,43 +501,7 @@ async def start_date_step(
 
 We modify the LUIS recognizer to extract entities from the user's request. We add the entities to the BookingDetails class.
 
-We add application insights to monitor the bot's performance and monitor the problematic interactions (experiences) between the chatbot and the user. Therefore, we use the final step to log in the application insights with AzureLogHandler. Furthermore, we track two details about a user's experience. The first thing to check is if the flight was satisfied with the bot's proposals and booked. And the second is if the customer was not satisfied with the bot's proposals. If the flight was booked, we log it with the level INFO. A customer who is not satisfied is logged with the level ERROR.
 
-```python
-async def final_step(self, step_context: WaterfallStepContext) -> DialogTurnResult:
-        """Complete the interaction and end the dialog."""
-        booking_details = step_context.options
-        
-        if step_context.result:
-            self.logger.setLevel(logging.INFO)
-            self.logger.info('The flight is booked and the customer is satisfied.')
-
-            return await step_context.end_dialog(booking_details)
-
-        prop = {'custom_dimensions': booking_details.__dict__}
-        
-        self.logger.setLevel(logging.ERROR)
-        self.logger.error('The customer was not satisfied about the bots proposals', extra=prop)
-        
-        
-        return await step_context.end_dialog()
-```
-
-In addition, we trigger an alert if the user does not accept the bot's proposal three times within five minutes. The alert is created under Application Insights, Alerts. We click `Create` followed by `Create rule`, and set up our alert. Here is an example of an alert I made.
-
-<figure>
-<a href="/assets/img_portfolio/chatbot/alert_ins.png"><img src="/assets/img_portfolio/chatbot/alert_ins.png"></a>
-<figcaption>Figure 7: Viewing the alert.</figcaption>
-</figure>
-
-As can be seen, the alert was triggered three times in five minutes. In the Error section, we have one alert. It is also possible to view the query that initiated the alert. We look for "not satisfied" in a trace message. The alert will be triggered if an item appears three times.
-
-In future work we can use application insights to:
- - monitor the number of requests that are made to our bot
- - monitor the number of errors that are made by our bot (ex: the user does not enter the correct date format)
- - monitor the number of users that are using our bot
- - monitor the number of times the user does not finalize the booking process
- - etc.
 
 
 # Deploing the bot in Azure
@@ -512,3 +516,18 @@ On my local machine, everything works as expected. Now we need it deployed on th
 
 We need to do some configurations in order the bot to work on the server. First we need to go to the Configuration tab, General Settings -> Startup command and set it to ```python -m aiohttp.web -H 0.0.0.0 -P 8000 app:main```. 
 
+# Monitoring the performance of the model in production
+
+The purpose of this section is to demonstrate the methodology used to monitor the performance of the model in production for this project. Figure 4 depicts the current architecture for MVP, which is the first version of the application. This type of architecture can not monitor the performance of the model in production. The disadvantage is the fact that we can not update our model regarding some new data. It should not be considered definitive. Our future work will focus on developing a target architecture that will enable us to monitor and update our model. As a result, the chatbot will be more efficient.
+
+<figure>
+<a href="/assets/img_portfolio/chatbot/oc10_p1.png"><img src="/assets/img_portfolio/chatbot/oc10_p1.png"></a>
+<figcaption>Figure 9: Current Architecture.</figcaption>
+</figure>
+
+Figure 10 shows the target architecture that improves the methodology for monitoring the model's performance in production. The future version of the application will incorporate an architecture that allows us to collect the conversations between the bot and the user. We would add them to the data. Having the latest data, already formatted for the LUIS model, we could learn the updated model, using Azure Functions, in a month. If the updated model gives us better performance (regarding the model evaluation in Figure 1) we would update the model using an Azure Function.
+
+<figure>
+<a href="/assets/img_portfolio/chatbot/oc10_p2.png"><img src="/assets/img_portfolio/chatbot/oc10_p2.png"></a>
+<figcaption>Figure 10: Target Architecture.</figcaption>
+</figure>
