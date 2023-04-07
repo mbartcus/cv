@@ -19,7 +19,7 @@ toc_label: BARTCUS Marius
 toc_sticky: true
 ---
 
-Here I will introduce my 10th project of the OpenClassrooms Data Scientist: AI Engineer path. The goal of this project is to develop an MVP that helps FlyMe staff book plane tickets for vacations. This starter version of the chat must be able to identify the following five elements in the user's request: Departure city, Destination city, Desired outbound flight date, the Desired return date of the flight, Maximum budget for the total ticket price.
+I will introduce my 10th OpenClassrooms Data Scientist: AI Engineer project here. This project aims to develop an MVP that helps FlyMe staff book plane tickets for vacations. This starter version of the chat must identify the following five elements in the user’s request: Departure city, Destination city, Desired outbound flight date, Desired return date of the flight, and Maximum budget for the total ticket price.
 
 [Here](/assets/img_portfolio/chatbot/Bartcus_Marius_4_presentation_022023.pdf) you can download the presentation of this project.
 
@@ -37,7 +37,9 @@ To build an intelligent chatbot that can be used to help users choose a vacation
 
 
 # Frames Dataset description
-To train LUIS we need data that contains examples of booking flights where we show what the chatbot could expect. We will use the Frames dataset which can be downloaded for free and is described further in this article. We also need to see what data format LUIS requires.
+To train LUIS we need data that contains examples of booking flights where we show what the chatbot could expect. We will use the Frames dataset which can be downloaded for free and is described further in this article. As we can see in the following figure the data are composed of 1369 dialogues. Each dialogue is composed of a user utterance and a bot response. The user utterance is the text that the user sends to the bot. The bot response is the text that the bot sends back to the user. 82 comunications users were not satisfied about the bot response. The user satisfaction is indicated by the ```userSurveyRating``` field. The True value indicates that the user was satisfied with the bot response. The value False indicates that the user was not satisfied with the bot response. 
+
+{% include figure image_path="/assets/img_portfolio/chatbot/data.png" alt="this is a placeholder image" caption="Figure 1: Frames dataset." %}
 
 Frame dialogues are in JSON format. Each dialogue has five main fields: ```user_id```, ```wizard_id```, ```id```, ```userSurveyRating``` and ```turns```.
 
@@ -47,7 +49,7 @@ Frame dialogues are in JSON format. Each dialogue has five main fields: ```user_
 
 Do you believe it is a person? Not really :) It's a Microsoft AI service that helps us build machine learning models of text based on natural language user conversations to predict the text's general meaning and extract the details that are pertinent to the task that we're exploring.
 
-Let us now explore the LUIS lifecycle, regarding Figure 1, to understand how it works:
+Let us now explore the LUIS lifecycle, regarding Figure 2, to understand how it works:
 - Plan: We need to identify the scenario for which users will use the bot. In our case, we are talking about booking a flight by giving the bot information about that flight.
 - Build: Make use of personal resources when developing the application. We will start by defining the ***intentions*** and the ***entities***. Next, add ***utterances*** for each intention.
 - Test and Improve: Testing the application to understand if some improvements are needed.
@@ -55,14 +57,14 @@ Let us now explore the LUIS lifecycle, regarding Figure 1, to understand how it 
 - Connect: Connect to other resources such as MicrosoftBotFramework
 - Refine: Review endpoint utterances to enhance your application with real-world examples.
 
-{% include figure image_path="/assets/img_portfolio/chatbot/luis-dev-lifecycle.png" alt="this is a placeholder image" caption="Figure 1: LUIS lyfe cycle." %}
+{% include figure image_path="/assets/img_portfolio/chatbot/luis-dev-lifecycle.png" alt="this is a placeholder image" caption="Figure 2: LUIS lyfe cycle." %}
 
 The client library and the API REST ***Authoring*** allow us to build, manage, train, test, and publish apps, while the API REST ***Prediction Runtime*** allows us to query the published application.
 
 ## Creating a resource for LUIS creation
 To create a language understanding resource we use the following [link](https://portal.azure.com/#create/Microsoft.CognitiveServicesLUISAllInOne). We follow the form and click ```Review + create```. Then we click ```Create```. Our resource for LUIS is now created.
 
-{% include figure image_path="/assets/img_portfolio/chatbot/1-create-ressource-for-LUIS.png" alt="this is a placeholder image" caption="Figure 2: LUIS lyfe cycle." %}
+{% include figure image_path="/assets/img_portfolio/chatbot/1-create-ressource-for-LUIS.png" alt="this is a placeholder image" caption="Figure 3: Creating Language Understanding." %}
 
 ## Configuration and creation of Python application
 I will start working with Jupyter lab to prepare the pipeline. But first, we create the conda environment with ```python3.9```. And then, install the package for the Client with pip:
@@ -316,9 +318,9 @@ The test dataset is used to evaluate the model. A comparison is made between th
 (correct_entity / len(true_entities)) * 100
 ```
 
-Based on the test data, we obtained a precision of 59.71% between the predicted model and the actual liberalization of the original data. Figure 1 shows each utterance was evaluated. Several utterances were evaluated with 100% precision. Many of them predict nothing, while others have middle precision levels. We can examine these three types of utterances by observing them.
+Based on the test data, we obtained a precision of 59.71% between the predicted model and the actual liberalization of the original data. Figure 4 shows each utterance was evaluated. Several utterances were evaluated with 100% precision. Many of them predict nothing, while others have middle precision levels. We can examine these three types of utterances by observing them.
 
-{% include figure image_path="/assets/img_portfolio/chatbot/evaluation.png" alt="this is a placeholder image" caption="Figure 3: Evaluating model." %}
+{% include figure image_path="/assets/img_portfolio/chatbot/evaluation.png" alt="this is a placeholder image" caption="Figure 4: Evaluating model." %}
 
 First, let us examine the case where entities can be predicted with 100% accuracy. Here, our test data looks like this:
 
@@ -407,9 +409,9 @@ Finally, run the bot with
 python app.py
 ```
 
- You can now test the bot with the Bot Emulator using the Bot URL of http://localhost:3978/api/messages. We can see an example of such a bot booking flight in Figure 6.
+ You can now test the bot with the Bot Emulator using the Bot URL of http://localhost:3978/api/messages. We can see an example of such a bot booking flight in Figure 5.
 
-{% include figure image_path="/assets/img_portfolio/chatbot/my_bot.png" alt="this is a placeholder image" caption="Figure 6: Fly bot." %}
+{% include figure image_path="/assets/img_portfolio/chatbot/my_bot.png" alt="this is a placeholder image" caption="Figure 5: Fly bot." %}
 
 This is the basic bot that we will use for our project. We will now modify it to make it work with our LUIS model and extract the entities from the user's request. We will also add the application insights to monitor the performance of the bot. 
 
@@ -465,7 +467,7 @@ On my local machine, everything works as expected. Now we need it deployed on th
 
 <figure>
 <a href="/assets/img_portfolio/chatbot/azure_web_app.png"><img src="/assets/img_portfolio/chatbot/azure_web_app.png"></a>
-<figcaption>Figure 8: Creating the Azure Web App.</figcaption>
+<figcaption>Figure 6: Creating the Azure Web App.</figcaption>
 </figure>
 
 We need to do some configurations in order the bot to work on the server. First we need to go to the Configuration tab, General Settings -> Startup command and set it to ```python -m aiohttp.web -H 0.0.0.0 -P 8000 app:main```. 
@@ -474,11 +476,11 @@ We need to do some configurations in order the bot to work on the server. First 
 
 We use Application Insights to control the model's performance in production. This will permit us to answer the question of "how many customers used the application. It will give us availability and performance monitoring. Go to the Azure portal and create the application Insights as in the figure bellow. 
 
-{% include figure image_path="/assets/img_portfolio/chatbot/AppIns.png" alt="this is a placeholder image" caption="Figure 4: Application Insights." %}
+{% include figure image_path="/assets/img_portfolio/chatbot/AppIns.png" alt="this is a placeholder image" caption="Figure 7: Application Insights." %}
 
 Check the resource mode ```Classic``` and click on ```Renew + create``` as in Figure 5. Then check the summary and click ```Create```. 
 
-{% include figure image_path="/assets/img_portfolio/chatbot/AppIns2.png" alt="this is a placeholder image" caption="Figure 5: Creating the Application Insights." %}
+{% include figure image_path="/assets/img_portfolio/chatbot/AppIns2.png" alt="this is a placeholder image" caption="Figure 8: Creating the Application Insights." %}
 
 Once we created our Application Insights resources, we can use the instrumentation key to configure our application insights sdk. We can copy it to the environment variables (.env file) to use it in our bot that will be created.
 
@@ -509,7 +511,7 @@ In addition, we trigger an alert if the user does not accept the bot's proposal 
 
 <figure>
 <a href="/assets/img_portfolio/chatbot/alert_ins.png"><img src="/assets/img_portfolio/chatbot/alert_ins.png"></a>
-<figcaption>Figure 7: Viewing the alert.</figcaption>
+<figcaption>Figure 9: Viewing the alert.</figcaption>
 </figure>
 
 As can be seen, the ERROR level log was triggered three times in five minutes. Therefore in the Error section, the alert was created. It is also possible to view the query that initiated the alert. We look for "not satisfied" in a trace message. The alert will be created if an item appears three times.
@@ -524,16 +526,16 @@ In future work, we can use application insights to:
 
 # Monitoring the performance of the model in production
 
-The purpose of this section is to demonstrate the methodology used to monitor the performance of the model in production for this project. Figure 9 depicts the current architecture for MVP, which is the first version of the application. This type of architecture can not monitor the performance of the model in production. The disadvantage is the fact that we can not update our model regarding some new data. It should not be considered definitive. Our future work will focus on developing a target architecture that will enable us to monitor and update our model. As a result, the chatbot will be more efficient.
+The purpose of this section is to demonstrate the methodology used to monitor the performance of the model in production for this project. Figure 10 depicts the current architecture for MVP, which is the first version of the application. This type of architecture can not monitor the performance of the model in production. The disadvantage is the fact that we can not update our model regarding some new data. It should not be considered definitive. Our future work will focus on developing a target architecture that will enable us to monitor and update our model. As a result, the chatbot will be more efficient.
 
 <figure>
 <a href="/assets/img_portfolio/chatbot/oc10_p1.png"><img src="/assets/img_portfolio/chatbot/oc10_p1.png"></a>
-<figcaption>Figure 9: Current Architecture.</figcaption>
+<figcaption>Figure 10: Current Architecture.</figcaption>
 </figure>
 
-Figure 10 shows the target architecture that improves the methodology for monitoring the model's performance in production. The future version of the application will incorporate an architecture that allows us to collect the conversations between the bot and the user. We would add them to the data. Having the latest data, already formatted for the LUIS model, we could learn the updated model, using Azure Functions, in a month. If the updated model gives us better performance (regarding the model evaluation in Figure 1) we would update the model using an Azure Function.
+Figure 11 shows the target architecture that improves the methodology for monitoring the model's performance in production. The future version of the application will incorporate an architecture that allows us to collect the conversations between the bot and the user. We would add them to the data. Having the latest data, already formatted for the LUIS model, we could learn the updated model, using Azure Functions, in a month. If the updated model gives us better performance (regarding the model evaluation) we would update the model using an Azure Function.
 
 <figure>
 <a href="/assets/img_portfolio/chatbot/oc10_p2.png"><img src="/assets/img_portfolio/chatbot/oc10_p2.png"></a>
-<figcaption>Figure 10: Target Architecture.</figcaption>
+<figcaption>Figure 11: Target Architecture.</figcaption>
 </figure>
