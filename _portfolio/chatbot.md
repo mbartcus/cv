@@ -43,7 +43,12 @@ To train LUIS we need data that contains examples of booking flights where we sh
 
 Frame dialogues are in JSON format. Each dialogue has five main fields: ```user_id```, ```wizard_id```, ```id```, ```userSurveyRating``` and ```turns```.
 
+A turn is a dialogue between the user and the bot. Here is an example of a turn between a user and a bot(wizzard) :
 
+<figure>
+  <img src="/assets/img_portfolio/chatbot/turn.png" alt="this is a placeholder image">
+  <figcaption>Turn example.</figcaption>
+</figure>
 
 # LUIS: Language Understanding Cognitive Service
 
