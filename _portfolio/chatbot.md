@@ -19,13 +19,17 @@ toc_label: BARTCUS Marius
 toc_sticky: true
 ---
 
+Here I will introduce my 10th project of the OpenClassrooms Data Scientist: AI Engineer path. The goal of this project is to develop an MVP that helps FlyMe staff book plane tickets for vacations. This starter version of the chat must be able to identify the following five elements in the user's request: Departure city, Destination city, Desired outbound flight date, the Desired return date of the flight, Maximum budget for the total ticket price.
+
+[Here](/assets/img_portfolio/chatbot/Bartcus_Marius_4_presentation_022023.pdf) you can download the presentation of this project.
+
 # What is a chatbot?
 
 A chatbot is simply a computer program that can interact with humans by stimulating conversations. We can find chatbots on many websites as well as in mobile applications. Now, formally speaking a chatbot is a computer program that responds to user input or action. We have seen in the recent past that the user must give some very clear commands or phrases to get an answer to their question. For example, when booking a plane ticket the user needs to write: ```<by-tiket-plane>```. But what if the user did not know the exact command to give the bot? The bot would tell the user that he did not understand the command. However, this changed with the advent of machine learning. We can now build intelligent chatbots that can converse with the user naturally. This uses natural language. So now, if a user says: 'Hello, I'd like to book a ticket', 'Buy me a ticket' or 'Can you please find me a ticket', the bot should be intelligent enough to understand that it needs to book a ticket.
 
 To build an intelligent chatbot that can be used to help users choose a vacation we will use:
  - Microsoft Bot Framework integrates that with Azure BotBuilder SDK
- - Python 3.8 to enhance the templates
+ - Python 3.9 to enhance the templates
  - Language understanding which is LUIS: Microsoft service to help us build machine learning models.
  - BotEmulator to test our bot on a local machine.
  - Use an existing dataset: ``` Frames Dataset```
@@ -374,56 +378,6 @@ The budget entity is the source of this problem. Observe that the predicted enti
 
 Finally, what happens to the utterances that are examined with 0% accuracy? The same as for the 66% accuracy case. We find entities that contain some characters at the end, which explains that the predicted entity takes 0% of accuracy.
 
-# Application Insights
-
-We use Application Insights to control the model's performance in production. This will permit us to answer the question of "how many customers used the application. It will give us availability and performance monitoring. Go to the Azure portal and create the application Insights as in the figure bellow. 
-
-{% include figure image_path="/assets/img_portfolio/chatbot/AppIns.png" alt="this is a placeholder image" caption="Figure 4: Application Insights." %}
-
-Check the resource mode ```Classic``` and click on ```Renew + create``` as in Figure 5. Then check the summary and click ```Create```. 
-
-{% include figure image_path="/assets/img_portfolio/chatbot/AppIns2.png" alt="this is a placeholder image" caption="Figure 5: Creating the Application Insights." %}
-
-Once we created our Application Insights resources, we can use the instrumentation key to configure our application insights sdk. We can copy it to the environment variables (.env file) to use it in our bot that will be created.
-
-We add application insights to monitor the bot's performance and monitor the problematic interactions (experiences) between the chatbot and the user. Therefore, we use the final step to log in the application insights with AzureLogHandler. Furthermore, we track two details about a user's experience. The first thing to check is if the flight was satisfied with the bot's proposals and booked. And the second is if the customer was not satisfied with the bot's proposals. If the flight was booked, we log it with the level INFO. A customer who is not satisfied is logged with the level ERROR.
-
-```python
-async def final_step(self, step_context: WaterfallStepContext) -> DialogTurnResult:
-        """Complete the interaction and end the dialog."""
-        booking_details = step_context.options
-        
-        if step_context.result:
-            self.logger.setLevel(logging.INFO)
-            self.logger.info('The flight is booked and the customer is satisfied.')
-
-            return await step_context.end_dialog(booking_details)
-
-        prop = {'custom_dimensions': booking_details.__dict__}
-        
-        self.logger.setLevel(logging.ERROR)
-        self.logger.error('The customer was not satisfied about the bots proposals', extra=prop)
-        
-        
-        return await step_context.end_dialog()
-```
-
-In addition, we trigger an alert if the user does not accept the bot's proposal three times within five minutes. The alert is created under Application Insights, Alerts. We click `Create` followed by `Create rule`, and set up our alert. Here is an example of an alert I create.
-
-
-<figure>
-<a href="/assets/img_portfolio/chatbot/alert_ins.png"><img src="/assets/img_portfolio/chatbot/alert_ins.png"></a>
-<figcaption>Figure 7: Viewing the alert.</figcaption>
-</figure>
-
-As can be seen, the ERROR level log was triggered three times in five minutes. Therefore in the Error section, the alert was created. It is also possible to view the query that initiated the alert. We look for "not satisfied" in a trace message. The alert will be created if an item appears three times.
-
-In future work, we can use application insights to:
- - monitor the number of requests that are made to our bot
- - monitor the number of errors that are made by our bot (ex: the user does not enter the correct date format)
- - monitor the number of users that are using our bot
- - monitor the number of times the user does not finalize the booking process
- - etc.
 
 
 # Bot Builder
@@ -515,6 +469,58 @@ On my local machine, everything works as expected. Now we need it deployed on th
 </figure>
 
 We need to do some configurations in order the bot to work on the server. First we need to go to the Configuration tab, General Settings -> Startup command and set it to ```python -m aiohttp.web -H 0.0.0.0 -P 8000 app:main```. 
+
+# Application Insights
+
+We use Application Insights to control the model's performance in production. This will permit us to answer the question of "how many customers used the application. It will give us availability and performance monitoring. Go to the Azure portal and create the application Insights as in the figure bellow. 
+
+{% include figure image_path="/assets/img_portfolio/chatbot/AppIns.png" alt="this is a placeholder image" caption="Figure 4: Application Insights." %}
+
+Check the resource mode ```Classic``` and click on ```Renew + create``` as in Figure 5. Then check the summary and click ```Create```. 
+
+{% include figure image_path="/assets/img_portfolio/chatbot/AppIns2.png" alt="this is a placeholder image" caption="Figure 5: Creating the Application Insights." %}
+
+Once we created our Application Insights resources, we can use the instrumentation key to configure our application insights sdk. We can copy it to the environment variables (.env file) to use it in our bot that will be created.
+
+We add application insights to monitor the bot's performance and monitor the problematic interactions (experiences) between the chatbot and the user. Therefore, we use the final step to log in the application insights with AzureLogHandler. Furthermore, we track two details about a user's experience. The first thing to check is if the flight was satisfied with the bot's proposals and booked. And the second is if the customer was not satisfied with the bot's proposals. If the flight was booked, we log it with the level INFO. A customer who is not satisfied is logged with the level ERROR.
+
+```python
+async def final_step(self, step_context: WaterfallStepContext) -> DialogTurnResult:
+        """Complete the interaction and end the dialog."""
+        booking_details = step_context.options
+        
+        if step_context.result:
+            self.logger.setLevel(logging.INFO)
+            self.logger.info('The flight is booked and the customer is satisfied.')
+
+            return await step_context.end_dialog(booking_details)
+
+        prop = {'custom_dimensions': booking_details.__dict__}
+        
+        self.logger.setLevel(logging.ERROR)
+        self.logger.error('The customer was not satisfied about the bots proposals', extra=prop)
+        
+        
+        return await step_context.end_dialog()
+```
+
+In addition, we trigger an alert if the user does not accept the bot's proposal three times within five minutes. The alert is created under Application Insights, Alerts. We click `Create` followed by `Create rule`, and set up our alert. Here is an example of an alert I create.
+
+
+<figure>
+<a href="/assets/img_portfolio/chatbot/alert_ins.png"><img src="/assets/img_portfolio/chatbot/alert_ins.png"></a>
+<figcaption>Figure 7: Viewing the alert.</figcaption>
+</figure>
+
+As can be seen, the ERROR level log was triggered three times in five minutes. Therefore in the Error section, the alert was created. It is also possible to view the query that initiated the alert. We look for "not satisfied" in a trace message. The alert will be created if an item appears three times.
+
+In future work, we can use application insights to:
+ - monitor the number of requests that are made to our bot
+ - monitor the number of errors that are made by our bot (ex: the user does not enter the correct date format)
+ - monitor the number of users that are using our bot
+ - monitor the number of times the user does not finalize the booking process
+ - etc.
+
 
 # Monitoring the performance of the model in production
 
