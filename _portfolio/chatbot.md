@@ -477,6 +477,21 @@ On my local machine, everything works as expected. Now we need it deployed on th
 
 We need to do some configurations in order the bot to work on the server. First we need to go to the Configuration tab, General Settings -> Startup command and set it to ```python -m aiohttp.web -H 0.0.0.0 -P 8000 app:main```. 
 
+Next, we want to use GitHub Actions to deploy our bot in Azure Web App. Also, we want to do it in a automatic way at each push. Therefore we go to ``Overview`` of the Azure Web App and download the publish profile. Then we go to the GitHub repository ```BookFlightBot```that we created for this project and go to the ```Settings``` tab. Then we go to ```Secrets``` and add the publish profile that we downloaded from Azure to ```Repository secrets```. We name it for exemple ```AZURE_WEBAPP_PUBLISH_PROFILE```. Then we modify the workflow file ```.github/workflows/main_bookflightbot.yml``` to add the following lines:
+
+```yaml
+      - name: 'Deploy to Azure Web App'
+        uses: azure/webapps-deploy@v2
+        id: deploy-to-webapp
+        with:
+          app-name: 'botflytht'
+          slot-name: 'Production'
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+```
+
+We can now push our code to GitHub and see the bot deployed in Azure. To see that everything works as expected, we can go and open a browser and type the URL of the bot. This will give us an error 500. This means that the bot is deployed. We need a graphical interface to test it. We can use the Bot Framework Emulator. If not so and other error is displayed, that means that the bot is not deployed. We shoud look to the LogStream to see what is the problem.
+
+{% include figure image_path="/assets/img_portfolio/chatbot/my_bot_azure.png" alt="this is a placeholder image" caption="Figure 7: Fly bot deployed in Azure." %}
 # Application Insights
 
 We use Application Insights to control the model's performance in production. This will permit us to answer the question of "how many customers used the application. It will give us availability and performance monitoring. Go to the Azure portal and create the application Insights as in the figure bellow. 
